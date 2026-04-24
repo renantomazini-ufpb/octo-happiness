@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://duhspd5uu53vj"]
+
+[ext_resource type="PackedScene" uid="uid://b81dgxqo5oui5" path="res://cenas/gui/barra.tscn" id="1_f10jm"]
+[ext_resource type="Script" uid="uid://bgdmwympdgu5f" path="res://cenas/gui/status.gd" id="1_os8iu"]
+[ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="3_e1ad3"]
+[ext_resource type="PackedScene" uid="uid://4q4nww06nbi1" path="res://cenas/gui/money.tscn" id="4_an6tl"]
+
+[node name="Status" type="Node2D" unique_id=1080076585]
+script = ExtResource("1_os8iu")
+
+[node name="fome" parent="." unique_id=1456021113 instance=ExtResource("1_f10jm")]
+position = Vector2(64, 88)
+
+[node name="estresse" parent="." unique_id=2122310306 instance=ExtResource("1_f10jm")]
+position = Vector2(64, 176)
+
+[node name="sono" parent="." unique_id=2056934651 instance=ExtResource("1_f10jm")]
+position = Vector2(464, 88)
+
+[node name="Timer" type="Timer" parent="." unique_id=1184161421]
+wait_time = 1.3459999999999999
+autostart = true
+
+[node name="social" parent="." unique_id=425417250 instance=ExtResource("1_f10jm")]
+position = Vector2(464, 176)
+
+[node name="Label" type="Label" parent="." unique_id=1188950772]
+offset_left = 64.0
+offset_top = 32.0
+offset_right = 304.0
+offset_bottom = 63.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_font_sizes/font_size = 32
+text = "NOME SOBRENOME"
+
+[node name="Money" parent="." unique_id=1127764243 instance=ExtResource("4_an6tl")]
+position = Vector2(64, 264)
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

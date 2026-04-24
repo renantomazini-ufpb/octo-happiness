@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://b81dgxqo5oui5"]
+
+[ext_resource type="Script" uid="uid://bo3l1mb7spjpm" path="res://cenas/gui/barra.gd" id="1_ldhd4"]
+[ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="1_o514a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldhd4"]
+bg_color = Color(0.17614403, 0.06381204, 6.016344e-09, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yka1l"]
+bg_color = Color(0.2546119, 0.8447548, 0.5475299, 1)
+
+[sub_resource type="Theme" id="Theme_tbj7n"]
+default_font = ExtResource("1_o514a")
+ProgressBar/constants/outline_size = 0
+ProgressBar/font_sizes/font_size = 14
+ProgressBar/styles/background = SubResource("StyleBoxFlat_ldhd4")
+ProgressBar/styles/fill = SubResource("StyleBoxFlat_yka1l")
+
+[node name="Barra" type="Node2D" unique_id=1456021113]
+script = ExtResource("1_ldhd4")
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=211068816]
+offset_top = 32.0
+offset_right = 360.0
+offset_bottom = 59.0
+theme = SubResource("Theme_tbj7n")
+value = 10.0
+show_percentage = false
+
+[node name="Label" type="Label" parent="ProgressBar" unique_id=1127933319]
+layout_mode = 0
+offset_top = -32.0
+offset_right = 169.0
+theme_override_font_sizes/font_size = 32
+text = "EXEMPLO"

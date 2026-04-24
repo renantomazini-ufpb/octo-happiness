@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://4q4nww06nbi1"]
+
+[ext_resource type="Script" uid="uid://diira3lrvk5ij" path="res://cenas/gui/money.gd" id="1_00syg"]
+[ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="1_1fyq7"]
+
+[node name="Money" type="Node2D" unique_id=1127764243]
+script = ExtResource("1_00syg")
+
+[node name="Label" type="Label" parent="." unique_id=337969268]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_fonts/font = ExtResource("1_1fyq7")
+theme_override_font_sizes/font_size = 36
+text = "Dinheiro:"
+
+[node name="valor_str" type="Label" parent="." unique_id=1190042266]
+offset_left = 120.0
+offset_right = 272.0
+offset_bottom = 35.0
+theme_override_fonts/font = ExtResource("1_1fyq7")
+theme_override_font_sizes/font_size = 36
+text = "0.00"
+horizontal_alignment = 2
