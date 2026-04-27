@@ -74,7 +74,9 @@ func controle_horario(minutos_):
 	var hora = minutos/60
 	var minute = minutos%60
 	if minutos >= 1440:
-		minutos = 0 
+		minutos = 0
+	if minute == 0:
+		minute = "00"
 	var strhor = str(hora) + ":" + str(minute)
 	$hora_label.text = strhor
 	print(strhor)
