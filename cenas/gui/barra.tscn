@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bo3l1mb7spjpm" path="res://cenas/gui/barra.gd" id="1_ldhd4"]
 [ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="1_o514a"]
+[ext_resource type="FontFile" uid="uid://dommxxp6bbic5" path="res://addons/MozartNbp-93Ey.ttf" id="3_yka1l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldhd4"]
 bg_color = Color(0.17614403, 0.06381204, 6.016344e-09, 1)
@@ -20,16 +21,17 @@ ProgressBar/styles/fill = SubResource("StyleBoxFlat_yka1l")
 script = ExtResource("1_ldhd4")
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=211068816]
-offset_top = 32.0
+offset_top = 24.0
 offset_right = 360.0
-offset_bottom = 59.0
+offset_bottom = 40.0
 theme = SubResource("Theme_tbj7n")
 value = 10.0
 show_percentage = false
 
 [node name="Label" type="Label" parent="ProgressBar" unique_id=1127933319]
 layout_mode = 0
-offset_top = -32.0
-offset_right = 169.0
-theme_override_font_sizes/font_size = 32
+offset_top = -24.0
+offset_right = 192.0
+theme_override_fonts/font = ExtResource("3_yka1l")
+theme_override_font_sizes/font_size = 28
 text = "EXEMPLO"

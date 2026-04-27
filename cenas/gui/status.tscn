@@ -4,36 +4,225 @@
 [ext_resource type="Script" uid="uid://bgdmwympdgu5f" path="res://cenas/gui/status.gd" id="1_os8iu"]
 [ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="3_e1ad3"]
 [ext_resource type="PackedScene" uid="uid://4q4nww06nbi1" path="res://cenas/gui/money.tscn" id="4_an6tl"]
+[ext_resource type="FontFile" uid="uid://dommxxp6bbic5" path="res://addons/MozartNbp-93Ey.ttf" id="5_nch0u"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an6tl"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nch0u"]
+bg_color = Color(0.05490196, 0, 0.12156863, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c3w5"]
+bg_color = Color(0.12941177, 0.06666667, 0.05490196, 1)
 
 [node name="Status" type="Node2D" unique_id=1080076585]
 script = ExtResource("1_os8iu")
 
+[node name="ColorRect" type="ColorRect" parent="." unique_id=243375006]
+offset_left = 80.0
+offset_right = 872.0
+offset_bottom = 192.0
+color = Color(0.03137255, 0, 0.07450981, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1936713671]
+offset_left = 872.0
+offset_right = 1152.0
+offset_bottom = 192.0
+color = Color(0.12941177, 0.10980392, 0.15686275, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1597003897]
+offset_right = 80.0
+offset_bottom = 192.0
+color = Color(1, 0.29411766, 1, 1)
+
 [node name="fome" parent="." unique_id=1456021113 instance=ExtResource("1_f10jm")]
-position = Vector2(64, 88)
+position = Vector2(104, 48)
 
 [node name="estresse" parent="." unique_id=2122310306 instance=ExtResource("1_f10jm")]
-position = Vector2(64, 176)
+position = Vector2(104, 96)
 
-[node name="sono" parent="." unique_id=2056934651 instance=ExtResource("1_f10jm")]
-position = Vector2(464, 88)
+[node name="energia" parent="." unique_id=2056934651 instance=ExtResource("1_f10jm")]
+position = Vector2(488, 48)
 
 [node name="Timer" type="Timer" parent="." unique_id=1184161421]
-wait_time = 1.3459999999999999
+wait_time = 5.0
 autostart = true
 
 [node name="social" parent="." unique_id=425417250 instance=ExtResource("1_f10jm")]
-position = Vector2(464, 176)
+position = Vector2(488, 96)
 
-[node name="Label" type="Label" parent="." unique_id=1188950772]
-offset_left = 64.0
-offset_top = 32.0
-offset_right = 304.0
-offset_bottom = 63.0
-theme_override_fonts/font = ExtResource("3_e1ad3")
+[node name="nome_sobrenome" type="Label" parent="." unique_id=1188950772]
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 344.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("5_nch0u")
 theme_override_font_sizes/font_size = 32
 text = "NOME SOBRENOME"
 
 [node name="Money" parent="." unique_id=1127764243 instance=ExtResource("4_an6tl")]
-position = Vector2(64, 264)
+position = Vector2(104, 152)
+
+[node name="curso" type="Label" parent="." unique_id=863593206]
+offset_left = 488.0
+offset_top = 8.0
+offset_right = 728.0
+offset_bottom = 39.0
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 32
+text = "NOME SOBRENOME"
+
+[node name="sede" parent="." unique_id=2043857596 instance=ExtResource("1_f10jm")]
+position = Vector2(488, 144)
+
+[node name="Node" type="Node" parent="." unique_id=1081589294]
+
+[node name="Button" type="Button" parent="Node" unique_id=1220668718]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 40.25592
+offset_right = 168.25592
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button2" type="Button" parent="Node" unique_id=1401686667]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 40.25592
+offset_top = 40.0
+offset_right = 168.25592
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button3" type="Button" parent="Node" unique_id=53292846]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 40.25592
+offset_top = 80.0
+offset_right = 168.25592
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button4" type="Button" parent="Node" unique_id=2090982929]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 40.25592
+offset_top = 120.0
+offset_right = 168.25592
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button5" type="Button" parent="Node" unique_id=998521478]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 40.25592
+offset_top = 160.0
+offset_right = 168.25592
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button6" type="Button" parent="Node" unique_id=553019304]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 192.25592
+offset_right = 320.25592
+offset_bottom = 32.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button7" type="Button" parent="Node" unique_id=739573928]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 192.25592
+offset_top = 40.0
+offset_right = 320.25592
+offset_bottom = 72.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button8" type="Button" parent="Node" unique_id=1341039101]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 192.25592
+offset_top = 80.0
+offset_right = 320.25592
+offset_bottom = 112.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button9" type="Button" parent="Node" unique_id=1735176874]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 192.25592
+offset_top = 120.0
+offset_right = 320.25592
+offset_bottom = 152.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button10" type="Button" parent="Node" unique_id=2127774575]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 192.25592
+offset_top = 160.0
+offset_right = 320.25592
+offset_bottom = 192.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="hora_label" type="Label" parent="." unique_id=165570400]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 73.0
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 30
+text = "12:00"
+horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

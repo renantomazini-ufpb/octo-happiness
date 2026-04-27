@@ -1,0 +1,155 @@
+[gd_scene format=3 uid="uid://0ptj5yufhbjh"]
+
+[ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="1_3r7c4"]
+[ext_resource type="Script" uid="uid://8erxa24cwuw" path="res://cenas/gui/controle.gd" id="1_tn8hw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h2yef"]
+bg_color = Color(0.47843137, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3r7c4"]
+bg_color = Color(0.15294118, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tn8hw"]
+bg_color = Color(0.34901962, 0, 0, 1)
+
+[node name="Botoes" type="Node2D" unique_id=1940798459]
+script = ExtResource("1_tn8hw")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=331763716]
+offset_left = 584.0
+offset_top = 8.0
+offset_right = 968.0
+offset_bottom = 328.0
+color = Color(0, 0, 0.050980393, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="." unique_id=1580422609]
+offset_left = 24.0
+offset_right = 152.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Estudar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button2" type="Button" parent="." unique_id=309027758]
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 152.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Comer"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button3" type="Button" parent="." unique_id=256579520]
+offset_left = 24.0
+offset_top = 128.0
+offset_right = 152.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Socializar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button4" type="Button" parent="." unique_id=2134062646]
+offset_left = 24.0
+offset_top = 192.0
+offset_right = 152.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Médico"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button5" type="Button" parent="." unique_id=1431073290]
+offset_left = 192.0
+offset_right = 320.0
+offset_bottom = 56.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Trabalhar"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button6" type="Button" parent="." unique_id=1397891998]
+offset_left = 192.0
+offset_top = 64.0
+offset_right = 320.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Beber"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button7" type="Button" parent="." unique_id=749128923]
+offset_left = 192.0
+offset_top = 128.0
+offset_right = 320.0
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Diversão"
+autowrap_mode = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button8" type="Button" parent="." unique_id=1855088438]
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 320.0
+offset_bottom = 248.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Exercícios"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button9" type="Button" parent="." unique_id=652814721]
+offset_left = 24.0
+offset_top = 256.0
+offset_right = 152.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Ir na aula"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button10" type="Button" parent="." unique_id=917895670]
+offset_left = 192.0
+offset_top = 256.0
+offset_right = 320.0
+offset_bottom = 312.0
+theme_override_fonts/font = ExtResource("1_3r7c4")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_h2yef")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3r7c4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_tn8hw")
+text = "Dormir"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
