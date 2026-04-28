@@ -102,7 +102,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Estudar"
 
 [node name="Button3" type="Button" parent="Node" unique_id=53292846]
 anchors_preset = -1
@@ -116,7 +116,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Trabalhar"
 
 [node name="Button4" type="Button" parent="Node" unique_id=2090982929]
 anchors_preset = -1
@@ -130,7 +130,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Diversão"
 
 [node name="Button5" type="Button" parent="Node" unique_id=998521478]
 anchors_preset = -1
@@ -157,7 +157,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Beber"
 
 [node name="Button7" type="Button" parent="Node" unique_id=739573928]
 anchors_preset = -1
@@ -171,7 +171,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Dormir"
 
 [node name="Button8" type="Button" parent="Node" unique_id=1341039101]
 anchors_preset = -1
@@ -185,7 +185,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Socializar"
 
 [node name="Button9" type="Button" parent="Node" unique_id=1735176874]
 anchors_preset = -1
@@ -199,7 +199,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Saúde"
 
 [node name="Button10" type="Button" parent="Node" unique_id=2127774575]
 anchors_preset = -1
@@ -213,7 +213,7 @@ theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Ir na aula"
 
 [node name="hora_label" type="Label" parent="." unique_id=165570400]
 offset_left = 8.0
@@ -236,3 +236,4 @@ text = "0"
 horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Node/Button3" to="." method="_on_button_3_pressed"]

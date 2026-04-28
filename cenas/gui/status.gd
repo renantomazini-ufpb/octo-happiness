@@ -54,6 +54,10 @@ func set_nome(nomestr):
 func set_curso_nome(curso_nomestr):
 	curso_nome = curso_nomestr
 	$curso.text = curso_nome
+	
+func add_money(valor):
+	$Money.set_din(valor)
+	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -90,3 +94,7 @@ func controle_horario(minutos_):
 func _on_botoes_comer_menu() -> void:
 	print("rodou?")
 	add_fome(100)
+
+
+func _on_button_3_pressed() -> void:
+	$Money.set_din(3100.21)

@@ -7,15 +7,15 @@
 script = ExtResource("1_00syg")
 
 [node name="Label" type="Label" parent="." unique_id=337969268]
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 135.0
+offset_bottom = 33.0
 theme_override_fonts/font = ExtResource("2_00syg")
 theme_override_font_sizes/font_size = 40
 text = "Dinheiro:"
 
 [node name="valor_str" type="Label" parent="." unique_id=1190042266]
-offset_left = 120.0
-offset_right = 272.0
+offset_left = 128.0
+offset_right = 320.0
 offset_bottom = 35.0
 theme_override_fonts/font = ExtResource("2_00syg")
 theme_override_font_sizes/font_size = 40

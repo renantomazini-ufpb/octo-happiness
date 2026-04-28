@@ -1,8 +1,9 @@
 extends Node2D
-
+var din = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	set_din(20.00)
 	pass # Replace with function body.
 
 
@@ -11,8 +12,9 @@ func _process(delta: float) -> void:
 	pass
 
 func get_din():
-	return $valor_str.text
+	return "R$" +str(din)
 
 func set_din(val):
-	$valor_str.text = str(val)
+	din = din + val
+	$valor_str.text = "R$" +str(din)
 	
