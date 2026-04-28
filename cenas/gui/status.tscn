@@ -45,6 +45,7 @@ position = Vector2(104, 96)
 position = Vector2(488, 48)
 
 [node name="Timer" type="Timer" parent="." unique_id=1184161421]
+wait_time = 2.0
 autostart = true
 
 [node name="social" parent="." unique_id=425417250 instance=ExtResource("1_f10jm")]
@@ -222,6 +223,16 @@ offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("5_nch0u")
 theme_override_font_sizes/font_size = 30
 text = "12:00"
+horizontal_alignment = 1
+
+[node name="dia" type="Label" parent="." unique_id=1997493293]
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 64.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 36
+text = "0"
 horizontal_alignment = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

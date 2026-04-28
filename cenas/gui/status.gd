@@ -9,6 +9,7 @@ var socialv = 50.00
 var money = 0.0
 var level_prof = 1
 var curso = 0
+var dia = 0
 var minutos = 720
 
 
@@ -22,8 +23,8 @@ func _ready() -> void:
 	$energia.set_nome("ENERGIA")
 	$social.set_perc(socialv)
 	$social.set_nome("SOCIAL")
-	$social.set_perc(sedev)
-	$social.set_nome("SEDE")
+	$sede.set_perc(sedev)
+	$sede.set_nome("SEDE")
 	
 func add_fome(valor):
 	fomev = fomev + valor
@@ -75,6 +76,8 @@ func controle_horario(minutos_):
 	var minute = minutos%60
 	if minutos >= 1440:
 		minutos = 0
+		dia = dia + 1
+		$dia.text = str(dia)
 	if minute == 0:
 		minute = "00"
 	var strhor = str(hora) + ":" + str(minute)
