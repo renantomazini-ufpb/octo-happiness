@@ -7,33 +7,50 @@
 [ext_resource type="FontFile" uid="uid://dommxxp6bbic5" path="res://addons/MozartNbp-93Ey.ttf" id="5_nch0u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an6tl"]
-bg_color = Color(0, 0, 0, 1)
+bg_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nch0u"]
-bg_color = Color(0.05490196, 0, 0.12156863, 1)
+bg_color = Color(0.98039216, 0.9843137, 0.9647059, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c3w5"]
-bg_color = Color(0.12941177, 0.06666667, 0.05490196, 1)
+bg_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg57x"]
+bg_color = Color(0.98039216, 0.9843137, 0.9647059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh0wc"]
+bg_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vihp4"]
+bg_color = Color(0.98039216, 0.9843137, 0.9647059, 1)
+border_color = Color(0.8, 0.05490196, 0.8, 1)
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25jwh"]
+bg_color = Color(0.7764706, 0.7176471, 0.74509805, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agtm4"]
+bg_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 
 [node name="Status" type="Node2D" unique_id=1080076585]
 script = ExtResource("1_os8iu")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=243375006]
-offset_left = 80.0
+offset_left = 96.0
 offset_right = 872.0
 offset_bottom = 192.0
-color = Color(0.03137255, 0, 0.07450981, 1)
+color = Color(0.98039216, 0.9843137, 0.9647059, 1)
 
 [node name="ColorRect2" type="ColorRect" parent="." unique_id=1936713671]
-offset_left = 872.0
+offset_left = 856.0
 offset_right = 1152.0
 offset_bottom = 192.0
-color = Color(0.12941177, 0.10980392, 0.15686275, 1)
+color = Color(0.7764706, 0.7176471, 0.74509805, 1)
 
 [node name="ColorRect3" type="ColorRect" parent="." unique_id=1597003897]
-offset_right = 80.0
+offset_right = 96.0
 offset_bottom = 192.0
-color = Color(1, 0.29411766, 1, 1)
+color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 
 [node name="fome" parent="." unique_id=1456021113 instance=ExtResource("1_f10jm")]
 position = Vector2(104, 48)
@@ -56,6 +73,7 @@ offset_left = 104.0
 offset_top = 8.0
 offset_right = 344.0
 offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
 theme_override_fonts/font = ExtResource("5_nch0u")
 theme_override_font_sizes/font_size = 32
 text = "NOME SOBRENOME"
@@ -68,6 +86,7 @@ offset_left = 488.0
 offset_top = 8.0
 offset_right = 728.0
 offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
 theme_override_fonts/font = ExtResource("5_nch0u")
 theme_override_font_sizes/font_size = 32
 text = "NOME SOBRENOME"
@@ -77,12 +96,12 @@ position = Vector2(488, 144)
 
 [node name="Node" type="Node" parent="." unique_id=1081589294]
 
-[node name="Button" type="Button" parent="Node" unique_id=1220668718]
+[node name="Button_comer" type="Button" parent="Node" unique_id=1220668718]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 40.25592
-offset_right = 168.25592
+offset_left = 32.25592
+offset_right = 160.25592
 offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -90,13 +109,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Comer"
 
-[node name="Button2" type="Button" parent="Node" unique_id=1401686667]
+[node name="Button_estudar" type="Button" parent="Node" unique_id=1401686667]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 40.25592
+offset_left = 32.25592
 offset_top = 40.0
-offset_right = 168.25592
+offset_right = 160.25592
 offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -104,13 +123,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Estudar"
 
-[node name="Button3" type="Button" parent="Node" unique_id=53292846]
+[node name="Button_trabalhar" type="Button" parent="Node" unique_id=53292846]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 40.25592
+offset_left = 32.25592
 offset_top = 80.0
-offset_right = 168.25592
+offset_right = 160.25592
 offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -118,13 +137,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Trabalhar"
 
-[node name="Button4" type="Button" parent="Node" unique_id=2090982929]
+[node name="Button_diver" type="Button" parent="Node" unique_id=2090982929]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 40.25592
+offset_left = 32.25592
 offset_top = 120.0
-offset_right = 168.25592
+offset_right = 160.25592
 offset_bottom = 152.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -132,26 +151,26 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Diversão"
 
-[node name="Button5" type="Button" parent="Node" unique_id=998521478]
+[node name="Button_investir" type="Button" parent="Node" unique_id=998521478]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 40.25592
+offset_left = 32.25592
 offset_top = 160.0
-offset_right = 168.25592
+offset_right = 160.25592
 offset_bottom = 192.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
-text = "Comer"
+text = "Investir"
 
-[node name="Button6" type="Button" parent="Node" unique_id=553019304]
+[node name="Button_beber" type="Button" parent="Node" unique_id=553019304]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 192.25592
-offset_right = 320.25592
+offset_left = 184.25592
+offset_right = 312.25592
 offset_bottom = 32.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -159,13 +178,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Beber"
 
-[node name="Button7" type="Button" parent="Node" unique_id=739573928]
+[node name="Button_dormir" type="Button" parent="Node" unique_id=739573928]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 192.25592
+offset_left = 184.25592
 offset_top = 40.0
-offset_right = 320.25592
+offset_right = 312.25592
 offset_bottom = 72.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -173,13 +192,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Dormir"
 
-[node name="Button8" type="Button" parent="Node" unique_id=1341039101]
+[node name="Button_socializar" type="Button" parent="Node" unique_id=1341039101]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 192.25592
+offset_left = 184.25592
 offset_top = 80.0
-offset_right = 320.25592
+offset_right = 312.25592
 offset_bottom = 112.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -187,13 +206,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Socializar"
 
-[node name="Button9" type="Button" parent="Node" unique_id=1735176874]
+[node name="Button_saude" type="Button" parent="Node" unique_id=1735176874]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 192.25592
+offset_left = 184.25592
 offset_top = 120.0
-offset_right = 320.25592
+offset_right = 312.25592
 offset_bottom = 152.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -201,13 +220,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
 theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Saúde"
 
-[node name="Button10" type="Button" parent="Node" unique_id=2127774575]
+[node name="Button_aula" type="Button" parent="Node" unique_id=2127774575]
 anchors_preset = -1
 anchor_left = 0.72200006
 anchor_right = 0.72200006
-offset_left = 192.25592
+offset_left = 184.25592
 offset_top = 160.0
-offset_right = 320.25592
+offset_right = 312.25592
 offset_bottom = 192.0
 theme_override_fonts/font = ExtResource("3_e1ad3")
 theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
@@ -216,24 +235,91 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
 text = "Ir na aula"
 
 [node name="hora_label" type="Label" parent="." unique_id=165570400]
-offset_left = 8.0
+offset_left = 16.0
 offset_top = 8.0
-offset_right = 73.0
-offset_bottom = 40.0
+offset_right = 81.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
 theme_override_fonts/font = ExtResource("5_nch0u")
 theme_override_font_sizes/font_size = 30
 text = "12:00"
 horizontal_alignment = 1
 
 [node name="dia" type="Label" parent="." unique_id=1997493293]
-offset_left = 16.0
-offset_top = 32.0
-offset_right = 64.0
-offset_bottom = 62.0
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 88.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
 theme_override_fonts/font = ExtResource("5_nch0u")
 theme_override_font_sizes/font_size = 36
 text = "0"
 horizontal_alignment = 1
 
+[node name="dia_lb" type="Label" parent="." unique_id=240927648]
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 26
+text = "DIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="conclusao_curso_lb" type="Label" parent="." unique_id=21231566]
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 26
+text = "Conclusão
+do Curso
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1814148609]
+offset_top = 128.0
+offset_right = 96.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_sg57x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qh0wc")
+value = 25.0
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=958708167]
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+
+[node name="ItemList" type="ItemList" parent="." unique_id=134480400]
+anchors_preset = -1
+offset_left = 832.0
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+theme_override_colors/font_hovered_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
+theme_override_colors/font_selected_color = Color(0.7764706, 0.7176471, 0.74509805, 1)
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxFlat_vihp4")
+theme_override_styles/hovered = SubResource("StyleBoxFlat_25jwh")
+theme_override_styles/hovered_selected = SubResource("StyleBoxFlat_agtm4")
+max_text_lines = 3
+max_columns = 2
+same_column_width = true
+fixed_column_width = 148
+icon_mode = 0
+fixed_icon_size = Vector2i(64, 64)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="pressed" from="Node/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Node/Button_comer" to="." method="_on_button_comer_pressed"]
+[connection signal="pressed" from="Node/Button_beber" to="." method="_on_button_beber_pressed"]
+[connection signal="item_clicked" from="ItemList" to="." method="_on_item_list_item_clicked"]

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://e7dkdiwkngll"]
+
+[node name="Comidas" type="Node2D" unique_id=262855682]
+
+[node name="Button" type="Button" parent="." unique_id=139910758]
+offset_left = 76.0
+offset_top = 82.0
+offset_right = 152.0
+offset_bottom = 120.0
+text = "aaaaaaaaaa"
+
+[node name="Button2" type="Button" parent="." unique_id=1462874541]
+offset_left = 76.0
+offset_top = 82.0
+offset_right = 152.0
+offset_bottom = 120.0
+text = "aaaaaaaaaa"
