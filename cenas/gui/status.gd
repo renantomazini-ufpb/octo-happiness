@@ -139,9 +139,13 @@ func _on_button_beber_pressed():
 
 
 func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
+	pass
+	
+
+
+func _on_item_list_item_selected(index: int) -> void:
 	var item = $ItemList.get_item_metadata(index)
 	print(item)
 	$ItemList.clear()
 	$ItemList.set_visible(false)
 	menu_aberto = ""
-	
