@@ -40,7 +40,7 @@ func add_estresse(valor):
 	
 func add_energia(valor):
 	energiav = energiav + valor
-	$fome.set_perc(energiav)
+	$energia.set_perc(energiav)
 	
 func add_social(valor):
 	socialv = socialv + valor
@@ -60,7 +60,8 @@ func set_curso_nome(curso_nomestr):
 	$curso.text = curso_nome
 	
 func add_money(valor):
-	$Money.set_din(valor)
+	money += valor
+	$Money.set_din(money)
 	
 
 
@@ -74,23 +75,25 @@ func _on_timer_timeout() -> void:
 	print("contou")
 	minutos += 10
 	controle_horario(minutos)
-	add_fome(-20)
+	add_fome(-2)
 	#$estresse.set_perc($estresse.get_perc() + 1.5)
 	#$Money.set_din(($Money.get_din()).to_float() + 1.12)
 	#$Timer.play()
 
 func controle_horario(minutos_):
-	var hora = minutos/60
+	var hora = int(minutos/60)
 	var minute = minutos%60
 	if minutos >= 1440:
 		minutos = 0
 		dia = dia + 1
 		$dia.text = str(dia)
-	if minute == 0:
-		minute = "00"
-	var strhor = str(hora) + ":" + str(minute)
+	var str_min = str(minute).pad_zeros(2)
+	var strhor = str(hora) + ":" + str_min
+	#var strhor = str(hora) + ":" + str(minute)
 	$hora_label.text = strhor
 	print(strhor)
+
+var minute = minutos % 60
 
 	
 
@@ -152,9 +155,34 @@ func _on_button_beber_pressed():
 func _on_item_list_item_selected(index: int) -> void:
 	var item = $ItemList.get_item_metadata(index)
 	print(item)
+	if item.has("fome"):
+		add_fome(item["fome"])
+	if item.has("sede"):
+		add_sede(item["sede"])
+	if item.has("energia"):
+		add_energia(item["energia"])
+	if item.has("estresse"):
+		add_estresse(item["estresse"])
+	if item.has("social"):
+		add_social(item["social"])
+	if item.has("preco"):
+		add_money(-item["preco"])
+	if item.has("salario"):
+		add_money(item["salario"])
+	if item.has("salario_mult"):
+		add_money(estudo_level * item["salario_mult"])
+	if item.has("estudo"):
+		estudo_level += item["estudo"]
+	if item.has("tempo"):
+		minutos += item["tempo"]
+		controle_horario(minutos)
+	if item.has("bonus"):
+		var ganho = (estudo_level / 4.0) * item["bonus"]
+		curso += ganho
 	$ItemList.clear()
 	$ItemList.set_visible(false)
 	menu_aberto = ""
+	normaliza()
 
 
 func _on_button_estudar_pressed() -> void:
@@ -193,7 +221,7 @@ func _on_button_trabalhar_pressed() -> void:
 				continue
 			var texto = item["nome"]
 			if item.has("salario"):
-				texto += "\nGanhos" + str(item["salario"])
+				texto += "\nGanhos " + str(item["salario"])
 			elif item.has("salario_mult"):
 				texto += "\n$ variável"
 			var index = $ItemList.add_item(
@@ -247,3 +275,12 @@ func _on_button_aula_pressed() -> void:
 		carregar_lista(itens.aula)
 		$ItemList.set_visible(true)
 		menu_aberto = "aula"
+		
+		
+		
+func normaliza():
+	fomev = clamp(fomev, 0, 100)
+	sedev = clamp(sedev, 0, 100)
+	estressev = clamp(estressev, 0, 100)
+	energiav = clamp(energiav, 0, 100)
+	socialv = clamp(socialv, 0, 100)
