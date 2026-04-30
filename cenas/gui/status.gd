@@ -92,7 +92,7 @@ func passar_tempo(qtd):
 func controle_horario():
 	var dinheiro_pais = randf_range(10.00, 50.00)
 	while minutos >= 1440:
-		$aviso.avisar("O dia passou, seus pais enviaram \n R$" + str(dinheiro_pais) )
+		$aviso.avisar("O dia passou, seus pais enviaram \n R$" + str("%0.2f" % dinheiro_pais) )
 		add_money(dinheiro_pais)
 		minutos -= 1440
 		dia += 1

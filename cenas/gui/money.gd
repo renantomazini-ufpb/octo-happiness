@@ -15,7 +15,7 @@ func get_din():
 
 func add_din(val):
 	din = din + val
-	$valor_str.text = "R$" +str(din)
+	$valor_str.text = "R$" +  str("%0.2f" % din) 
 
 func sub_din(val):
 	din = din - val
