@@ -2,12 +2,11 @@ extends Node2D
 const ItensDB = preload("res://scripts/ItensDB.gd")
 var nome = ''
 var curso_nome = ''
-var fomev = 33.00
+var fomev = 50.00
 var sedev = 100.00
 var estressev = 0.0
 var energiav = 100.00
 var socialv = 50.00
-var money = 0.0
 var level_prof = 1
 var estudo_level = 1.0
 var curso = 0.0
@@ -17,6 +16,7 @@ var minutos = 720
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Money.add_din(50.00)
 	$fome.set_perc(fomev)
 	$fome.set_nome("FOME")
 	$estresse.set_perc(estressev)
@@ -60,8 +60,7 @@ func set_curso_nome(curso_nomestr):
 	$curso.text = curso_nome
 	
 func add_money(valor):
-	money += valor
-	$Money.set_din(money)
+	$Money.add_din(valor)
 	
 
 
@@ -72,29 +71,39 @@ func _process(delta: float) -> void:
 
 #abaixo apenas um teste 
 func _on_timer_timeout() -> void:
-	print("contou")
-	minutos += 10
-	controle_horario(minutos)
-	add_fome(-2)
+	passar_tempo(10)
+	#print("contou")
+	#minutos += 10
+	#controle_horario(minutos)
+	#add_fome(-2)
 	#$estresse.set_perc($estresse.get_perc() + 1.5)
 	#$Money.set_din(($Money.get_din()).to_float() + 1.12)
 	#$Timer.play()
 
-func controle_horario(minutos_):
-	var hora = int(minutos/60)
-	var minute = minutos%60
-	if minutos >= 1440:
-		minutos = 0
-		dia = dia + 1
+
+func passar_tempo(qtd):
+	minutos += qtd
+	add_fome(-qtd * 0.05)
+	add_sede(-qtd * 0.1)
+	add_energia(-qtd * 0.02)
+	controle_horario()
+	normaliza()
+	
+func controle_horario():
+	var dinheiro_pais = randf_range(10.00, 50.00)
+	while minutos >= 1440:
+		$aviso.avisar("O dia passou, seus pais enviaram \n R$" + str(dinheiro_pais) )
+		add_money(dinheiro_pais)
+		minutos -= 1440
+		dia += 1
+		
 		$dia.text = str(dia)
+
+	var hora = int(minutos / 60)
+	var minute = minutos % 60
+
 	var str_min = str(minute).pad_zeros(2)
-	var strhor = str(hora) + ":" + str_min
-	#var strhor = str(hora) + ":" + str(minute)
-	$hora_label.text = strhor
-	print(strhor)
-
-var minute = minutos % 60
-
+	$hora_label.text = str(hora) + ":" + str_min
 	
 
 
@@ -174,8 +183,7 @@ func _on_item_list_item_selected(index: int) -> void:
 	if item.has("estudo"):
 		estudo_level += item["estudo"]
 	if item.has("tempo"):
-		minutos += item["tempo"]
-		controle_horario(minutos)
+		passar_tempo(item["tempo"])
 	if item.has("bonus"):
 		var ganho = (estudo_level / 4.0) * item["bonus"]
 		curso += ganho
@@ -284,3 +292,9 @@ func normaliza():
 	estressev = clamp(estressev, 0, 100)
 	energiav = clamp(energiav, 0, 100)
 	socialv = clamp(socialv, 0, 100)
+
+	$fome.set_perc(fomev)
+	$sede.set_perc(sedev)
+	$estresse.set_perc(estressev)
+	$energia.set_perc(energiav)
+	$social.set_perc(socialv)
