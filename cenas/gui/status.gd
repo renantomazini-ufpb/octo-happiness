@@ -9,7 +9,8 @@ var energiav = 100.00
 var socialv = 50.00
 var money = 0.0
 var level_prof = 1
-var curso = 0
+var estudo_level = 1.0
+var curso = 0.0
 var dia = 0
 var minutos = 720
 @onready var itens = ItensDB.new()
@@ -26,6 +27,8 @@ func _ready() -> void:
 	$social.set_nome("SOCIAL")
 	$sede.set_perc(sedev)
 	$sede.set_nome("SEDE")
+	
+	$aviso.avisar("testando")
 	
 func add_fome(valor):
 	fomev = fomev + valor
@@ -107,9 +110,15 @@ func carregar_lista(lista):
 	$ItemList.clear()
 	
 	for item in lista:
+		var preco = item.get("preco", 0)
+		
+		var texto = item["nome"]
+		if preco > 0:
+			texto += "\nR$" + str(preco)
+		
 		var index = $ItemList.add_item(
-			item["nome"] + "\nR$" + str(item["preco"]),
-			item["icone"]
+			texto,
+			item.get("icone", null)
 		)
 		
 		$ItemList.set_item_metadata(index, item)
@@ -117,6 +126,7 @@ func carregar_lista(lista):
 var menu_aberto = ""
 
 func _on_button_comer_pressed():
+	$aviso.avisar("testando 2 comida")
 	if menu_aberto == "comida":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
@@ -138,10 +148,6 @@ func _on_button_beber_pressed():
 		menu_aberto = "bebida"
 
 
-func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
-	pass
-	
-
 
 func _on_item_list_item_selected(index: int) -> void:
 	var item = $ItemList.get_item_metadata(index)
@@ -149,3 +155,95 @@ func _on_item_list_item_selected(index: int) -> void:
 	$ItemList.clear()
 	$ItemList.set_visible(false)
 	menu_aberto = ""
+
+
+func _on_button_estudar_pressed() -> void:
+	if menu_aberto == "estudar":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.estudar)
+		$ItemList.set_visible(true)
+		menu_aberto = "estudar"
+
+
+func _on_button_dormir_pressed() -> void:
+	if menu_aberto == "dormir":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.dormir)
+		$ItemList.set_visible(true)
+		menu_aberto = "dormir"
+
+
+func _on_button_trabalhar_pressed() -> void:
+	if menu_aberto == "trabalhar":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		$ItemList.clear()
+	
+		for item in itens.trabalhar:
+			var req = item.get("req_estudo", 0.0)
+			if estudo_level < req:
+				continue
+			var texto = item["nome"]
+			if item.has("salario"):
+				texto += "\nGanhos" + str(item["salario"])
+			elif item.has("salario_mult"):
+				texto += "\n$ variável"
+			var index = $ItemList.add_item(
+				texto,
+				item.get("icone", null)
+			)
+			$ItemList.set_item_metadata(index, item)
+		$ItemList.set_visible(true)
+		menu_aberto = "trabalhar"
+
+
+func _on_button_socializar_pressed() -> void:
+	if menu_aberto == "socializar":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.socializar)
+		$ItemList.set_visible(true)
+		menu_aberto = "socializar"
+
+
+func _on_button_diver_pressed() -> void:
+	if menu_aberto == "diversao":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.diversao)
+		$ItemList.set_visible(true)
+		menu_aberto = "diversao"
+
+
+func _on_button_investir_pressed() -> void:
+	if menu_aberto == "investir":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.investir)
+		$ItemList.set_visible(true)
+		menu_aberto = "investir"
+
+
+func _on_button_aula_pressed() -> void:
+	if menu_aberto == "aula":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.aula)
+		$ItemList.set_visible(true)
+		menu_aberto = "aula"
