@@ -59,6 +59,13 @@ func set_curso_nome(curso_nomestr):
 	curso_nome = curso_nomestr
 	$curso.text = curso_nome
 	
+func curso_perc_update(curso):
+	$conclusao_curso_perc.value = curso
+	
+func add_curso_perc(valor):
+	curso = curso + valor
+	curso_perc_update(curso)
+	
 func add_money(valor):
 	$Money.add_din(valor)
 	
@@ -187,6 +194,7 @@ func _on_item_list_item_selected(index: int) -> void:
 	if item.has("bonus"):
 		var ganho = (estudo_level / 4.0) * item["bonus"]
 		curso += ganho
+		curso_perc_update(curso)
 	$ItemList.clear()
 	$ItemList.set_visible(false)
 	menu_aberto = ""

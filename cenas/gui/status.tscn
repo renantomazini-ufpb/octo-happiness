@@ -272,16 +272,15 @@ do Curso
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="ProgressBar" type="ProgressBar" parent="." unique_id=1814148609]
+[node name="conclusao_curso_perc" type="ProgressBar" parent="." unique_id=1814148609]
 offset_top = 128.0
 offset_right = 96.0
 offset_bottom = 158.0
-theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+theme_override_colors/font_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 theme_override_fonts/font = ExtResource("5_nch0u")
 theme_override_font_sizes/font_size = 32
 theme_override_styles/background = SubResource("StyleBoxFlat_sg57x")
 theme_override_styles/fill = SubResource("StyleBoxFlat_qh0wc")
-value = 25.0
 
 [node name="ColorRect4" type="ColorRect" parent="." unique_id=958708167]
 visible = false
