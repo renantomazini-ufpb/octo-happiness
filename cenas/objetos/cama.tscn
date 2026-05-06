@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b0psegsrs1cy8"]
+
+[ext_resource type="Script" uid="uid://c73c2t5ycyfmj" path="res://cenas/objetos/cama.gd" id="1_vbrw6"]
+[ext_resource type="Texture2D" uid="uid://4b5to6hrf7w" path="res://sprites/cenario/objects/4_Bedroom_Singles_Shadowless/Bedroom_Singles_Shadowless_194.png" id="2_lfwf4"]
+[ext_resource type="Texture2D" uid="uid://cyh8ieboxgpr7" path="res://sprites/cenario/objects/4_Bedroom_Singles_Shadowless/Bedroom_Singles_Shadowless_206.png" id="3_mk8k0"]
+
+[node name="Cama" type="Node2D" unique_id=182846364]
+script = ExtResource("1_vbrw6")
+
+[node name="colchao" type="Sprite2D" parent="." unique_id=899628898]
+texture = ExtResource("2_lfwf4")
+
+[node name="lencol" type="Sprite2D" parent="colchao" unique_id=1935370186]
+position = Vector2(0, 8)
+texture = ExtResource("3_mk8k0")
+
+[node name="Timer" type="Timer" parent="colchao/lencol" unique_id=612643596]
+wait_time = 0.2
