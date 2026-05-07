@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://4q4nww06nbi1" path="res://cenas/gui/money.tscn" id="4_an6tl"]
 [ext_resource type="FontFile" uid="uid://dommxxp6bbic5" path="res://addons/MozartNbp-93Ey.ttf" id="5_nch0u"]
 [ext_resource type="Script" uid="uid://hh153wvpegi3" path="res://cenas/gui/aviso.gd" id="6_4c3w5"]
+[ext_resource type="PackedScene" uid="uid://d1l5rucbgc1bs" path="res://cenas/ambiente/quarto_1.tscn" id="7_sg57x"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an6tl"]
 bg_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
@@ -39,6 +40,10 @@ bg_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 
 [node name="Status" type="Node2D" unique_id=1080076585]
 script = ExtResource("1_os8iu")
+
+[node name="Quarto1" parent="." unique_id=1184900622 instance=ExtResource("7_sg57x")]
+position = Vector2(-47.999996, 192)
+scale = Vector2(5, 5)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=243375006]
 offset_left = 96.0
