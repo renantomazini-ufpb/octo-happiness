@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://d1l5rucbgc1bs"]
 
+[ext_resource type="Script" uid="uid://bdf5tdfntpjpx" path="res://cenas/ambiente/quarto_1.gd" id="1_1hwpm"]
 [ext_resource type="Texture2D" uid="uid://dfb2j0mb4ol8a" path="res://sprites/cenario/Room_Builder_subfiles/Room_Builder_Floors_16x16.png" id="1_lbobs"]
 [ext_resource type="Texture2D" uid="uid://bu2xmya0ynjvm" path="res://sprites/cenario/Room_Builder_subfiles/Room_Builder_Walls_16x16.png" id="2_3c8n3"]
 [ext_resource type="Texture2D" uid="uid://okbcfc5unbdn" path="res://sprites/cenario/object_spritesheets/animated_door_3.png" id="3_3c8n3"]
@@ -1495,18 +1496,6 @@ region = Rect2(96, 0, 32, 48)
 atlas = ExtResource("4_al282")
 region = Rect2(128, 0, 32, 48)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t04tx"]
-atlas = ExtResource("4_al282")
-region = Rect2(160, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cnnud"]
-atlas = ExtResource("4_al282")
-region = Rect2(192, 0, 32, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8oait"]
-atlas = ExtResource("4_al282")
-region = Rect2(224, 0, 32, 48)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_i1ao8"]
 atlas = ExtResource("4_al282")
 region = Rect2(224, 0, 32, 48)
@@ -1556,17 +1545,8 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_076da")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_t04tx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cnnud")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8oait")
 }],
-"loop": true,
+"loop": false,
 "name": &"abrir",
 "speed": 5.0
 }, {
@@ -1741,6 +1721,18 @@ region = Rect2(352, 64, 16, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_5s2os"]
 atlas = ExtResource("16_8oait")
 region = Rect2(368, 64, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5rswd"]
+atlas = ExtResource("16_8oait")
+region = Rect2(144, 576, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_so80n"]
+atlas = ExtResource("16_8oait")
+region = Rect2(160, 576, 16, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4pbeh"]
+atlas = ExtResource("16_8oait")
+region = Rect2(176, 576, 16, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vnolx"]
 atlas = ExtResource("16_8oait")
@@ -2122,6 +2114,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5rswd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_so80n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4pbeh")
+}],
+"loop": true,
+"name": &"Comendo",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_vnolx")
 }, {
 "duration": 1.0,
@@ -2136,7 +2142,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_cfh7h")
 }],
-"loop": true,
+"loop": false,
 "name": &"Estica_braco",
 "speed": 5.0
 }, {
@@ -2385,6 +2391,7 @@ animations = [{
 }]
 
 [node name="Quarto1" type="Node2D" unique_id=1184900622]
+script = ExtResource("1_1hwpm")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1234429693]
 tile_map_data = PackedByteArray("AAAAAAAAAQAGAAQAAAAAAAEAAQAGAAQAAAABAAAAAQAHAAAAAAABAAEAAQAHAAEAAAACAAAAAQAIAAAAAAACAAEAAQAIAAEAAAADAAAAAQAIAAAAAAADAAEAAQAIAAEAAAAEAAAAAQAIAAAAAAAEAAEAAQAIAAEAAAAFAAAAAQAIAAAAAAAFAAEAAQAIAAEAAAAGAAAAAQAIAAAAAAAGAAEAAQAIAAEAAAAHAAAAAQAIAAQAAAAHAAEAAQAIAAUAAAAIAAAAAQAIAAQAAAAIAAEAAQAIAAUAAAAJAAAAAQAIAAQAAAAJAAEAAQAIAAUAAAAKAAAAAQAIAAQAAAAKAAEAAQAIAAUAAAALAAAAAQAIAAQAAAALAAEAAQAIAAUAAAAMAAAAAQAIAAQAAAAMAAEAAQAIAAUAAAANAAAAAQAIAAQAAAAOAAAAAQAIAAQAAAAAAAIAAQAGAAQAAAAAAAMAAQAGAAQAAAAAAAQAAQAGAAQAAAAAAAUAAQAGAAQAAAABAAIAAAAMABwAAAABAAMAAAAMAB0AAAABAAQAAAAMAB0AAAABAAUAAAAMAB0AAAAFAAUAAAANAB0AAAAFAAQAAAANAB0AAAAGAAMAAAANAB0AAAAGAAQAAAANAB0AAAAGAAUAAAANAB0AAAADAAUAAAANAB0AAAAEAAUAAAANAB0AAAACAAUAAAANAB0AAAACAAQAAAANAB0AAAADAAQAAAANAB0AAAAEAAQAAAANAB0AAAAFAAMAAAANAB0AAAAEAAMAAAANAB0AAAADAAMAAAANAB0AAAACAAMAAAANAB0AAAAGAAIAAAANABwAAAAFAAIAAAANABwAAAAEAAIAAAANABwAAAADAAIAAAANABwAAAACAAIAAAANABwAAAAHAAIAAAABACAAAAAIAAIAAAABACAAAAAJAAIAAAABACAAAAAKAAIAAAABACAAAAALAAIAAAABACAAAAAMAAIAAAABACAAAAANAAIAAAABACAAAAAOAAIAAAABACAAAAAHAAUAAAABACEAAAAHAAQAAAABACEAAAAHAAMAAAABACEAAAAIAAMAAAABACEAAAAIAAQAAAABACEAAAAIAAUAAAABACEAAAAJAAMAAAABACEAAAAJAAQAAAABACEAAAAJAAUAAAABACEAAAAKAAMAAAABACEAAAAKAAQAAAABACEAAAAKAAUAAAABACEAAAALAAMAAAABACEAAAALAAQAAAABACEAAAALAAUAAAABACEAAAAMAAMAAAABACEAAAAMAAQAAAABACEAAAAMAAUAAAABACEAAAANAAMAAAABACEAAAANAAQAAAABACEAAAANAAUAAAABACEAAAAOAAMAAAABACEAAAAOAAQAAAABACEAAAAOAAUAAAABACEAAAANAAEAAQAIAAUAAAAOAAEAAQAIAAUAAAA=")
@@ -2398,8 +2405,7 @@ sprite_frames = SubResource("SpriteFrames_3saso")
 z_index = 3
 position = Vector2(32, 56)
 sprite_frames = SubResource("SpriteFrames_i871p")
-animation = &"fechar"
-frame_progress = 0.3761573
+animation = &"abrir"
 
 [node name="Cama" parent="." unique_id=182846364 instance=ExtResource("4_4pl16")]
 position = Vector2(136, 48)
@@ -2437,9 +2443,10 @@ position = Vector2(120, 32)
 texture = ExtResource("15_b8l2f")
 
 [node name="Personagem" type="AnimatedSprite2D" parent="." unique_id=1276999781]
-position = Vector2(96, 64)
+position = Vector2(104, 56)
 sprite_frames = SubResource("SpriteFrames_umrbh")
-animation = &"Andando_direita"
+animation = &"Estica_braco"
 autoplay = "Respirando_frente"
-frame_progress = 0.9931791
 script = ExtResource("17_i1ao8")
+
+[node name="Timer" type="Timer" parent="." unique_id=379808847]

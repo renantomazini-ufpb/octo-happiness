@@ -296,6 +296,7 @@ color = Color(0.05882353, 0.05882353, 0.105882354, 1)
 
 [node name="ItemList" type="ItemList" parent="." unique_id=134480400]
 visible = false
+z_index = 5
 anchors_preset = -1
 offset_left = 832.0
 offset_top = 192.0

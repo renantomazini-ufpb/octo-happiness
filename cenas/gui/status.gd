@@ -145,7 +145,8 @@ func carregar_lista(lista):
 var menu_aberto = ""
 
 func _on_button_comer_pressed():
-	$aviso.avisar("testando 2 comida")
+	#$aviso.avisar("testando 2 comida")
+	$Quarto1.comer()
 	if menu_aberto == "comida":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
@@ -199,7 +200,6 @@ func _on_item_list_item_selected(index: int) -> void:
 	$ItemList.set_visible(false)
 	menu_aberto = ""
 	normaliza()
-
 
 func _on_button_estudar_pressed() -> void:
 	if menu_aberto == "estudar":
