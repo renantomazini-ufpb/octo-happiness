@@ -25,6 +25,7 @@
 ]
 
 @export var estudar = [
+	{"nome":"Teste","estudo":1,"estresse":10,"energia":-25,"tempo":4,"icone":preload("res://icon.svg")},
 	{"nome":"Ler PDFs","estudo":0.1,"estresse":10,"energia":-25,"tempo":30,"icone":preload("res://icon.svg")},
 	{"nome":"Ver vídeos","estudo":0.1,"estresse":15,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
 	{"nome":"Criar resumos","estudo":0.2,"estresse":25,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},

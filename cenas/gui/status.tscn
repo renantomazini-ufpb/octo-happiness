@@ -42,7 +42,7 @@ bg_color = Color(0.3372549, 0.3529412, 0.45882353, 1)
 script = ExtResource("1_os8iu")
 
 [node name="Quarto1" parent="." unique_id=1184900622 instance=ExtResource("7_sg57x")]
-position = Vector2(-47.999996, 192)
+position = Vector2(-48, 192)
 scale = Vector2(5, 5)
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=243375006]
@@ -72,8 +72,6 @@ position = Vector2(104, 96)
 position = Vector2(488, 48)
 
 [node name="Timer" type="Timer" parent="." unique_id=1184161421]
-wait_time = 2.0
-autostart = true
 
 [node name="social" parent="." unique_id=425417250 instance=ExtResource("1_f10jm")]
 position = Vector2(488, 96)
@@ -241,6 +239,9 @@ theme_override_font_sizes/font_size = 30
 text = "12:00"
 horizontal_alignment = 1
 
+[node name="hora_animation" type="Timer" parent="hora_label" unique_id=292986598]
+autostart = true
+
 [node name="dia" type="Label" parent="." unique_id=1997493293]
 offset_left = 8.0
 offset_top = 48.0
@@ -336,6 +337,7 @@ script = ExtResource("6_4c3w5")
 [node name="Timer_aviso" type="Timer" parent="aviso" unique_id=367119776]
 wait_time = 5.0
 one_shot = true
+autostart = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Node/Button_comer" to="." method="_on_button_comer_pressed"]

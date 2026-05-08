@@ -12,6 +12,7 @@ var estudo_level = 1.0
 var curso = 0.0
 var dia = 0
 var minutos = 720
+var travado = false
 @onready var itens = ItensDB.new()
 
 # Called when the node enters the scene tree for the first time.
@@ -77,8 +78,8 @@ func _process(delta: float) -> void:
 	
 
 #abaixo apenas um teste 
-func _on_timer_timeout() -> void:
-	passar_tempo(10)
+#func _on_timer_timeout() -> void:
+#	passar_tempo(10)
 	#print("contou")
 	#minutos += 10
 	#controle_horario(minutos)
@@ -123,55 +124,85 @@ func _on_button_3_pressed() -> void:
 	$Money.set_din(3100.21)
 
 
-
-
 func carregar_lista(lista):
+
 	$ItemList.clear()
-	
+
 	for item in lista:
-		var preco = item.get("preco", 0)
-		
+
 		var texto = item["nome"]
-		if preco > 0:
+		var preco = item.get("preco", null)
+		if preco != null:
 			texto += "\nR$" + str(preco)
 		
 		var index = $ItemList.add_item(
 			texto,
 			item.get("icone", null)
 		)
-		
+
 		$ItemList.set_item_metadata(index, item)
 
-var menu_aberto = ""
+		var tooltip = ""
 
-func _on_button_comer_pressed():
-	#$aviso.avisar("testando 2 comida")
-	$Quarto1.comer()
-	if menu_aberto == "comida":
-		$ItemList.clear()
-		$ItemList.set_visible(false)
-		menu_aberto = ""
-	else:
-		carregar_lista(itens.comidas)
-		menu_aberto = "comida"
-		$ItemList.set_visible(true)
+		if item.has("preco"):
+			tooltip += "Preço: R$" + str(item["preco"]) + "\n"
 
+		if item.has("fome"):
+			tooltip += "Fome: +" + str(item["fome"]) + "\n"
 
-func _on_button_beber_pressed():
-	if menu_aberto == "bebida":
-		$ItemList.clear()
-		$ItemList.set_visible(false)
-		menu_aberto = ""
-	else:
-		carregar_lista(itens.bebidas)
-		$ItemList.set_visible(true)
-		menu_aberto = "bebida"
+		if item.has("sede"):
+			tooltip += "Sede: +" + str(item["sede"]) + "\n"
+
+		if item.has("energia"):
+			tooltip += "Energia: " + str(item["energia"]) + "\n"
+
+		if item.has("estresse"):
+			tooltip += "Estresse: " + str(item["estresse"]) + "\n"
+
+		if item.has("social"):
+			tooltip += "Social: +" + str(item["social"]) + "\n"
+
+		if item.has("tempo"):
+			tooltip += "Tempo: " + str(item["tempo"]) + " min\n"
+
+		$ItemList.set_item_tooltip(index, tooltip)
+		
+		
+
+func bloquear():
+	travado = true
+	
+func desbloquear():
+	travado = false
 
 
 
 func _on_item_list_item_selected(index: int) -> void:
+	bloquear()
 	var item = $ItemList.get_item_metadata(index)
 	print(item)
+	$ItemList.clear()
+	$ItemList.set_visible(false)
+	#animacoes
+	if menu_aberto == "comidas":
+		await $Quarto1.comer()
+	elif menu_aberto == "bebidas":
+		await $Quarto1.beber()
+	elif menu_aberto == "estudar":
+		await $Quarto1.estudar()
+	elif menu_aberto == "dormir":
+		await $Quarto1.dormir()
+	elif menu_aberto == "trabalhar":
+		await $Quarto1.sair_casa()
+	elif menu_aberto == "aula":
+		await $Quarto1.sair_casa()
+	elif menu_aberto == "diversao":
+		if item["nome"] == "Leitura":
+			$Quarto1.ler()
+		elif item["nome"] == "Escutar música":
+			$Quarto1.celular()
+		else:
+			$Quarto1.estudar()
 	if item.has("fome"):
 		add_fome(item["fome"])
 	if item.has("sede"):
@@ -192,35 +223,78 @@ func _on_item_list_item_selected(index: int) -> void:
 		estudo_level += item["estudo"]
 	if item.has("tempo"):
 		passar_tempo(item["tempo"])
+	else:
+		passar_tempo(10)
 	if item.has("bonus"):
 		var ganho = (estudo_level / 4.0) * item["bonus"]
 		curso += ganho
 		curso_perc_update(curso)
-	$ItemList.clear()
-	$ItemList.set_visible(false)
+	#fechadao
 	menu_aberto = ""
 	normaliza()
+	
+var menu_aberto = ""
+
+func abrir_menu(nome_menu):
+	if travado == true:
+		return
+	if menu_aberto == nome_menu:
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.get(nome_menu))
+		menu_aberto = nome_menu
+		$ItemList.set_visible(true)
+
+func _on_button_comer_pressed():
+	abrir_menu("comidas")
+	#$aviso.avisar("testando 2 comida")
+	#$Quarto1.comer()
+	'''if menu_aberto == "comida":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.comidas)
+		menu_aberto = "comida"
+		$ItemList.set_visible(true)'''
+
+
+func _on_button_beber_pressed():
+	abrir_menu("bebidas")
+	'''if menu_aberto == "bebida":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		carregar_lista(itens.bebidas)
+		$ItemList.set_visible(true)
+		menu_aberto = "bebida"'''
+
 
 func _on_button_estudar_pressed() -> void:
-	if menu_aberto == "estudar":
+	abrir_menu("estudar")
+	'''if menu_aberto == "estudar":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
 	else:
 		carregar_lista(itens.estudar)
 		$ItemList.set_visible(true)
-		menu_aberto = "estudar"
+		menu_aberto = "estudar"'''
 
 
 func _on_button_dormir_pressed() -> void:
-	if menu_aberto == "dormir":
+	abrir_menu("dormir")
+	'''if menu_aberto == "dormir":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
 	else:
 		carregar_lista(itens.dormir)
 		$ItemList.set_visible(true)
-		menu_aberto = "dormir"
+		menu_aberto = "dormir"'''
 
 
 func _on_button_trabalhar_pressed() -> void:
@@ -250,47 +324,51 @@ func _on_button_trabalhar_pressed() -> void:
 
 
 func _on_button_socializar_pressed() -> void:
-	if menu_aberto == "socializar":
+	abrir_menu("socializar")
+	'''if menu_aberto == "socializar":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
 	else:
 		carregar_lista(itens.socializar)
 		$ItemList.set_visible(true)
-		menu_aberto = "socializar"
+		menu_aberto = "socializar"'''
 
 
 func _on_button_diver_pressed() -> void:
-	if menu_aberto == "diversao":
+	abrir_menu("diversao")
+	'''if menu_aberto == "diversao":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
 	else:
 		carregar_lista(itens.diversao)
 		$ItemList.set_visible(true)
-		menu_aberto = "diversao"
+		menu_aberto = "diversao"'''
 
 
 func _on_button_investir_pressed() -> void:
-	if menu_aberto == "investir":
+	abrir_menu("investir")
+	'''if menu_aberto == "investir":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
 	else:
 		carregar_lista(itens.investir)
 		$ItemList.set_visible(true)
-		menu_aberto = "investir"
+		menu_aberto = "investir"'''
 
 
 func _on_button_aula_pressed() -> void:
-	if menu_aberto == "aula":
+	abrir_menu("aula")
+	'''if menu_aberto == "aula":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
 	else:
 		carregar_lista(itens.aula)
 		$ItemList.set_visible(true)
-		menu_aberto = "aula"
+		menu_aberto = "aula"'''
 		
 		
 		
