@@ -8,6 +8,7 @@ pia 80, 32
 micro 48,32
 '''
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	self.respirando_frente()

@@ -15,8 +15,12 @@ var minutos = 720
 var travado = false
 @onready var itens = ItensDB.new()
 
+signal terminado
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	$Quarto1.acao_terminou.connect(_fim_animacao)
 	$Money.add_din(50.00)
 	$fome.set_perc(fomev)
 	$fome.set_nome("FOME")
@@ -384,3 +388,8 @@ func normaliza():
 	$estresse.set_perc(estressev)
 	$energia.set_perc(energiav)
 	$social.set_perc(socialv)
+
+
+func _fim_animacao():
+	#print("acabou")
+	desbloquear()

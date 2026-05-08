@@ -339,6 +339,7 @@ wait_time = 5.0
 one_shot = true
 autostart = true
 
+[connection signal="terminado" from="." to="." method="_on_terminado"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="Node/Button_comer" to="." method="_on_button_comer_pressed"]
 [connection signal="pressed" from="Node/Button_estudar" to="." method="_on_button_estudar_pressed"]

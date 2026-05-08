@@ -9,7 +9,8 @@ micro 48,32
 neutro 112,64
 porta 136, 16
 '''
-
+signal acao_terminou
+	
 var locais = {
 	"geladeira": Vector2(40,56),
 	"pia": Vector2(80,56),
@@ -21,12 +22,15 @@ var locais = {
 	"porta": Vector2(136,24)
 }
 
+func _ready() -> void:
+	pass
+	#colocar para trocar de boneco aqui assim que eu souber como
+	#%Personagem.get_scene_instance_load_placeholder("")
 
 
 func ir_para(local):
 
 	var alvo = locais[local]
-
 	while $Personagem.position.distance_to(alvo) > 1:
 		$TimerC.start()
 
@@ -66,6 +70,7 @@ func comer():
 	$Personagem.comer_animation()
 	await get_tree().create_timer(5).timeout
 	$Personagem.respirando_frente()
+	acao_terminou.emit()
 
 func beber():
 	await ir_para("geladeira")
@@ -77,7 +82,7 @@ func beber():
 	await get_tree().create_timer(5).timeout
 	$Geladeira.play("fechar")
 	$Personagem.respirando_frente()
-	
+	acao_terminou.emit()
 
 func estudar():
 	await ir_para("computador")
@@ -88,7 +93,7 @@ func estudar():
 	$Mesa_estudo/Computer.pause()
 	await ir_para("neutro")
 	$Personagem.respirando_frente()
-	
+	acao_terminou.emit()
 	
 func dormir():
 	await ir_para("cama")
@@ -96,6 +101,7 @@ func dormir():
 	await get_tree().create_timer(5).timeout
 	await ir_para("neutro")
 	$Personagem.respirando_frente()
+	acao_terminou.emit()
 	
 func sair_casa():
 	await ir_para("porta")
@@ -106,13 +112,15 @@ func sair_casa():
 	$Personagem.visible = true
 	await ir_para("neutro")
 	$Personagem.respirando_frente()
-
+	acao_terminou.emit()
 func ler():
 	$Personagem.lendo()
 	await get_tree().create_timer(3).timeout
 	$Personagem.respirando_frente()
+	acao_terminou.emit()
 	
 func celular():
 	$Personagem.usando_celular()
 	await get_tree().create_timer(3).timeout
 	$Personagem.respirando_frente()
+	acao_terminou.emit()
