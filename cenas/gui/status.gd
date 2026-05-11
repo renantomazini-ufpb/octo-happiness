@@ -15,8 +15,6 @@ var minutos = 720
 var travado = false
 @onready var itens = ItensDB.new()
 
-signal terminado
-
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,7 +31,6 @@ func _ready() -> void:
 	$sede.set_perc(sedev)
 	$sede.set_nome("SEDE")
 	
-	$aviso.avisar("testando")
 	
 func add_fome(valor):
 	fomev = fomev + valor
@@ -102,8 +99,9 @@ func passar_tempo(qtd):
 	normaliza()
 	
 func controle_horario():
-	var dinheiro_pais = randf_range(10.00, 50.00)
+	
 	while minutos >= 1440:
+		var dinheiro_pais = randf_range(10.00, 50.00)
 		$aviso.avisar("O dia passou, seus pais enviaram \n R$" + str("%0.2f" % dinheiro_pais) )
 		add_money(dinheiro_pais)
 		minutos -= 1440
@@ -137,7 +135,7 @@ func carregar_lista(lista):
 		var texto = item["nome"]
 		var preco = item.get("preco", null)
 		if preco != null:
-			texto += "\nR$" + str(preco)
+			texto += "\nR$" + str("%0.2f" % preco)
 		
 		var index = $ItemList.add_item(
 			texto,
@@ -202,11 +200,11 @@ func _on_item_list_item_selected(index: int) -> void:
 		await $Quarto1.sair_casa()
 	elif menu_aberto == "diversao":
 		if item["nome"] == "Leitura":
-			$Quarto1.ler()
+			await $Quarto1.ler()
 		elif item["nome"] == "Escutar música":
-			$Quarto1.celular()
+			await $Quarto1.celular()
 		else:
-			$Quarto1.estudar()
+			await $Quarto1.estudar()
 	if item.has("fome"):
 		add_fome(item["fome"])
 	if item.has("sede"):
