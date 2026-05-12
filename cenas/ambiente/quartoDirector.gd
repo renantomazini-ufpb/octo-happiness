@@ -21,9 +21,24 @@ var locais = {
 	"neutro": Vector2(112,64),
 	"porta": Vector2(136,24)
 }
+var personagem_atual = null
 
-func _ready() -> void:
-	pass
+func trocar_personagem(caminho_cena):
+	var pos_antiga = Vector2(112,64)
+
+	if personagem_atual != null:
+		pos_antiga = personagem_atual.position
+		personagem_atual.queue_free()
+
+	var nova_cena = load(caminho_cena)
+	personagem_atual = nova_cena.instantiate()
+	personagem_atual.position = pos_antiga
+	add_child(personagem_atual)
+	personagem_atual.name = "Personagem"
+	
+	
+func _ready():
+	trocar_personagem("res://cenas/atores/aline.tscn")
 	#colocar para trocar de boneco aqui assim que eu souber como
 	#%Personagem.get_scene_instance_load_placeholder("")
 
@@ -31,96 +46,96 @@ func _ready() -> void:
 func ir_para(local):
 
 	var alvo = locais[local]
-	while $Personagem.position.distance_to(alvo) > 1:
+	while personagem_atual.position.distance_to(alvo) > 1:
 		$TimerC.start()
 
 		# horizontal
-		if $Personagem.position.x > alvo.x:
-			$Personagem.andando_esquerda()
-			$Personagem.position.x -= 8
+		if personagem_atual.position.x > alvo.x:
+			personagem_atual.andando_esquerda()
+			personagem_atual.position.x -= 8
 
-		elif $Personagem.position.x < alvo.x:
-			$Personagem.andando_direita()
-			$Personagem.position.x += 8
+		elif personagem_atual.position.x < alvo.x:
+			personagem_atual.andando_direita()
+			personagem_atual.position.x += 8
 
 		# vertical
-		elif $Personagem.position.y < alvo.y:
-			$Personagem.andando_frente()
-			$Personagem.position.y += 8
+		elif personagem_atual.position.y < alvo.y:
+			personagem_atual.andando_frente()
+			personagem_atual.position.y += 8
 
-		elif $Personagem.position.y > alvo.y:
-			$Personagem.andando_costas()
-			$Personagem.position.y -= 8
+		elif personagem_atual.position.y > alvo.y:
+			personagem_atual.andando_costas()
+			personagem_atual.position.y -= 8
 
 		await $TimerC.timeout
-	$Personagem.position = alvo
+	personagem_atual.position = alvo
 		
 		
 func idle():
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	
 	
 func comer():
 	await ir_para("geladeira")
-	$Personagem.estica_braco()
+	personagem_atual.estica_braco()
 	$Geladeira.play("abrir")
 	await get_tree().create_timer(2).timeout
 	$Geladeira.play("fechar")
 	await ir_para("micro")
-	$Personagem.comer_animation()
+	personagem_atual.comer_animation()
 	await get_tree().create_timer(5).timeout
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	acao_terminou.emit()
 
 func beber():
 	await ir_para("geladeira")
-	$Personagem.estica_braco()
+	personagem_atual.estica_braco()
 	$Geladeira.play("abrir")
 	await get_tree().create_timer(3).timeout
 	$Geladeira.play("fechar")
-	$Personagem.comer_animation()
+	personagem_atual.comer_animation()
 	await get_tree().create_timer(5).timeout
 	$Geladeira.play("fechar")
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	acao_terminou.emit()
 
 func estudar():
 	await ir_para("computador")
-	$Personagem.usando_pc()
+	personagem_atual.usando_pc()
 	$Mesa_estudo/Computer.play("funcionando")
 	await get_tree().create_timer(5).timeout
 	$Mesa_estudo/Computer.play("desligado")
 	$Mesa_estudo/Computer.pause()
 	await ir_para("neutro")
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	acao_terminou.emit()
 	
 func dormir():
 	await ir_para("cama")
-	$Personagem.respirando_esquerda()
+	personagem_atual.respirando_esquerda()
 	await get_tree().create_timer(5).timeout
 	await ir_para("neutro")
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	acao_terminou.emit()
 	
 func sair_casa():
 	await ir_para("porta")
 	$PortaBanheiro.play("default")
-	$Personagem.visible = false
+	personagem_atual.visible = false
 	await get_tree().create_timer(4).timeout
 	$PortaBanheiro.play("default")
-	$Personagem.visible = true
+	personagem_atual.visible = true
 	await ir_para("neutro")
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	acao_terminou.emit()
 func ler():
-	$Personagem.lendo()
+	personagem_atual.lendo()
 	await get_tree().create_timer(3).timeout
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	acao_terminou.emit()
 	
 func celular():
-	$Personagem.usando_celular()
+	personagem_atual.usando_celular()
 	await get_tree().create_timer(3).timeout
-	$Personagem.respirando_frente()
+	personagem_atual.respirando_frente()
 	acao_terminou.emit()

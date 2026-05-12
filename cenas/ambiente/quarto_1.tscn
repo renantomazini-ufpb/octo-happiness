@@ -1669,4 +1669,5 @@ texture = ExtResource("15_b8l2f")
 wait_time = 0.2
 
 [node name="Personagem" parent="." unique_id=480935541 instance=ExtResource("17_i1ao8")]
+visible = false
 position = Vector2(64, 64)
