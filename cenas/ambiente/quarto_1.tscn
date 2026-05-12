@@ -16,7 +16,6 @@
 [ext_resource type="Texture2D" uid="uid://bk8gxh3yect5w" path="res://sprites/cenario/objects/PC/Jail_Black_Shadow_Singles_151.png" id="13_1hwpm"]
 [ext_resource type="Texture2D" uid="uid://cav8whe6vk8ml" path="res://sprites/cenario/objects/PC/Jail_Black_Shadow_Singles_150.png" id="14_x45qm"]
 [ext_resource type="Texture2D" uid="uid://4rgq47fqnxxp" path="res://sprites/cenario/objects/4_Bedroom_Black_Shadow_SIngles_16x16/Bedroom_Black_Shadow_Singles_300.png" id="15_b8l2f"]
-[ext_resource type="PackedScene" uid="uid://r3dcbsdahu3g" path="res://cenas/atores/ronan.tscn" id="17_i1ao8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4pl16"]
 texture = ExtResource("1_lbobs")
@@ -1667,7 +1666,3 @@ texture = ExtResource("15_b8l2f")
 
 [node name="TimerC" type="Timer" parent="." unique_id=379808847]
 wait_time = 0.2
-
-[node name="Personagem" parent="." unique_id=480935541 instance=ExtResource("17_i1ao8")]
-visible = false
-position = Vector2(64, 64)
