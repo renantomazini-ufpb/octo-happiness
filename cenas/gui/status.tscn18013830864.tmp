@@ -1,0 +1,337 @@
+[gd_scene format=3 uid="uid://duhspd5uu53vj"]
+
+[ext_resource type="PackedScene" uid="uid://b81dgxqo5oui5" path="res://cenas/gui/barra.tscn" id="1_f10jm"]
+[ext_resource type="Script" uid="uid://bgdmwympdgu5f" path="res://cenas/gui/status.gd" id="1_os8iu"]
+[ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="3_e1ad3"]
+[ext_resource type="PackedScene" uid="uid://4q4nww06nbi1" path="res://cenas/gui/money.tscn" id="4_an6tl"]
+[ext_resource type="FontFile" uid="uid://dommxxp6bbic5" path="res://addons/MozartNbp-93Ey.ttf" id="5_nch0u"]
+[ext_resource type="Script" uid="uid://hh153wvpegi3" path="res://cenas/gui/aviso.gd" id="6_4c3w5"]
+[ext_resource type="PackedScene" uid="uid://d1l5rucbgc1bs" path="res://cenas/ambiente/quarto_1.tscn" id="7_sg57x"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_an6tl"]
+bg_color = Color(0.08627451, 0.08627451, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nch0u"]
+bg_color = Color(0.27450982, 0.27450982, 0.8, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4c3w5"]
+bg_color = Color(0.18039216, 0.18039216, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sg57x"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qh0wc"]
+bg_color = Color(0.08627451, 0.08627451, 0.3019608, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vihp4"]
+bg_color = Color(0.45490196, 0.45490196, 0.9098039, 1)
+border_color = Color(0.8, 0.05490196, 0.8, 1)
+corner_detail = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_25jwh"]
+bg_color = Color(0.18039216, 0.18039216, 0.54901963, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_agtm4"]
+bg_color = Color(0.27450982, 0.27450982, 0.8, 1)
+
+[node name="Status" type="Node2D" unique_id=1080076585]
+script = ExtResource("1_os8iu")
+
+[node name="Quarto1" parent="." unique_id=1184900622 instance=ExtResource("7_sg57x")]
+position = Vector2(-48, 192)
+scale = Vector2(5, 5)
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=243375006]
+offset_left = 96.0
+offset_right = 872.0
+offset_bottom = 192.0
+color = Color(0.72156864, 0.72156864, 0.9372549, 1)
+
+[node name="ColorRect2" type="ColorRect" parent="." unique_id=1936713671]
+offset_left = 856.0
+offset_right = 1152.0
+offset_bottom = 192.0
+color = Color(0.45490196, 0.45490196, 0.9098039, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="." unique_id=1597003897]
+offset_right = 96.0
+offset_bottom = 192.0
+color = Color(0.08627451, 0.08627451, 0.3019608, 1)
+
+[node name="fome" parent="." unique_id=1456021113 instance=ExtResource("1_f10jm")]
+position = Vector2(104, 48)
+
+[node name="estresse" parent="." unique_id=2122310306 instance=ExtResource("1_f10jm")]
+position = Vector2(104, 96)
+
+[node name="energia" parent="." unique_id=2056934651 instance=ExtResource("1_f10jm")]
+position = Vector2(488, 48)
+
+[node name="Timer" type="Timer" parent="." unique_id=1184161421]
+
+[node name="social" parent="." unique_id=425417250 instance=ExtResource("1_f10jm")]
+position = Vector2(488, 96)
+
+[node name="nome_sobrenome" type="Label" parent="." unique_id=1188950772]
+offset_left = 104.0
+offset_top = 8.0
+offset_right = 344.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.08627451, 0.08627451, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 32
+text = "NOME SOBRENOME"
+
+[node name="Money" parent="." unique_id=1127764243 instance=ExtResource("4_an6tl")]
+position = Vector2(104, 152)
+
+[node name="curso" type="Label" parent="." unique_id=863593206]
+offset_left = 488.0
+offset_top = 8.0
+offset_right = 728.0
+offset_bottom = 39.0
+theme_override_colors/font_color = Color(0.08627451, 0.08627451, 0.3019608, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 32
+text = "NOME SOBRENOME"
+
+[node name="sede" parent="." unique_id=2043857596 instance=ExtResource("1_f10jm")]
+position = Vector2(488, 144)
+
+[node name="Node" type="Node" parent="." unique_id=1081589294]
+
+[node name="Button_comer" type="Button" parent="Node" unique_id=1220668718]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 32.25592
+offset_top = 8.0
+offset_right = 160.25592
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Comer"
+
+[node name="Button_estudar" type="Button" parent="Node" unique_id=1401686667]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 32.25592
+offset_top = 56.0
+offset_right = 160.25592
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Estudar"
+
+[node name="Button_trabalhar" type="Button" parent="Node" unique_id=53292846]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 32.25592
+offset_top = 104.0
+offset_right = 160.25592
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Trabalhar"
+
+[node name="Button_diver" type="Button" parent="Node" unique_id=2090982929]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 32.25592
+offset_top = 152.0
+offset_right = 160.25592
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Diversão"
+
+[node name="Button_beber" type="Button" parent="Node" unique_id=553019304]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 184.25592
+offset_top = 8.0
+offset_right = 312.25592
+offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Beber"
+
+[node name="Button_dormir" type="Button" parent="Node" unique_id=739573928]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 184.25592
+offset_top = 56.0
+offset_right = 312.25592
+offset_bottom = 88.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Dormir"
+
+[node name="Button_socializar" type="Button" parent="Node" unique_id=1341039101]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 184.25592
+offset_top = 104.0
+offset_right = 312.25592
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Socializar"
+
+[node name="Button_aula" type="Button" parent="Node" unique_id=2127774575]
+anchors_preset = -1
+anchor_left = 0.72200006
+anchor_right = 0.72200006
+offset_left = 184.25592
+offset_top = 152.0
+offset_right = 312.25592
+offset_bottom = 184.0
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_styles/normal = SubResource("StyleBoxFlat_an6tl")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_nch0u")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4c3w5")
+text = "Ir na aula"
+
+[node name="hora_label" type="Label" parent="." unique_id=165570400]
+offset_left = 16.0
+offset_top = 8.0
+offset_right = 81.0
+offset_bottom = 33.0
+theme_override_colors/font_color = Color(0.72156864, 0.72156864, 0.9372549, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 30
+text = "12:00"
+horizontal_alignment = 1
+
+[node name="hora_animation" type="Timer" parent="hora_label" unique_id=292986598]
+autostart = true
+
+[node name="dia" type="Label" parent="." unique_id=1997493293]
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 88.0
+offset_bottom = 78.0
+theme_override_colors/font_color = Color(0.72156864, 0.72156864, 0.9372549, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 36
+text = "0"
+horizontal_alignment = 1
+
+[node name="dia_lb" type="Label" parent="." unique_id=240927648]
+offset_left = 16.0
+offset_top = 32.0
+offset_right = 80.0
+offset_bottom = 55.0
+theme_override_colors/font_color = Color(0.72156864, 0.72156864, 0.9372549, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 26
+text = "DIA"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="conclusao_curso_lb" type="Label" parent="." unique_id=21231566]
+offset_top = 80.0
+offset_right = 96.0
+offset_bottom = 127.0
+theme_override_colors/font_color = Color(0.72156864, 0.72156864, 0.9372549, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 26
+text = "Conclusão
+do Curso
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="conclusao_curso_perc" type="ProgressBar" parent="." unique_id=1814148609]
+offset_top = 128.0
+offset_right = 96.0
+offset_bottom = 158.0
+theme_override_colors/font_color = Color(0.72156864, 0.72156864, 0.9372549, 1)
+theme_override_fonts/font = ExtResource("5_nch0u")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/background = SubResource("StyleBoxFlat_sg57x")
+theme_override_styles/fill = SubResource("StyleBoxFlat_qh0wc")
+
+[node name="ColorRect4" type="ColorRect" parent="." unique_id=958708167]
+visible = false
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+
+[node name="ItemList" type="ItemList" parent="." unique_id=134480400]
+visible = false
+z_index = 5
+anchors_preset = -1
+offset_left = 832.0
+offset_top = 192.0
+offset_right = 1152.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hovered_color = Color(1, 1, 1, 1)
+theme_override_colors/font_selected_color = Color(0.72156864, 0.72156864, 0.9372549, 1)
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_font_sizes/font_size = 16
+theme_override_styles/panel = SubResource("StyleBoxFlat_vihp4")
+theme_override_styles/hovered = SubResource("StyleBoxFlat_25jwh")
+theme_override_styles/hovered_selected = SubResource("StyleBoxFlat_agtm4")
+max_text_lines = 3
+max_columns = 2
+same_column_width = true
+fixed_column_width = 148
+icon_mode = 0
+fixed_icon_size = Vector2i(64, 64)
+
+[node name="aviso" type="Label" parent="." unique_id=1076319113]
+visible = false
+offset_left = 128.0
+offset_top = 256.0
+offset_right = 960.0
+offset_bottom = 512.0
+theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
+theme_override_colors/font_outline_color = Color(0.98039216, 0.9843137, 0.9647059, 1)
+theme_override_constants/line_spacing = 10
+theme_override_constants/outline_size = 8
+theme_override_fonts/font = ExtResource("3_e1ad3")
+theme_override_font_sizes/font_size = 64
+text = "Avisos vão acontecer aqui!"
+horizontal_alignment = 1
+script = ExtResource("6_4c3w5")
+
+[node name="Timer_aviso" type="Timer" parent="aviso" unique_id=367119776]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="pressed" from="Node/Button_comer" to="." method="_on_button_comer_pressed"]
+[connection signal="pressed" from="Node/Button_estudar" to="." method="_on_button_estudar_pressed"]
+[connection signal="pressed" from="Node/Button_trabalhar" to="." method="_on_button_trabalhar_pressed"]
+[connection signal="pressed" from="Node/Button_diver" to="." method="_on_button_diver_pressed"]
+[connection signal="pressed" from="Node/Button_beber" to="." method="_on_button_beber_pressed"]
+[connection signal="pressed" from="Node/Button_dormir" to="." method="_on_button_dormir_pressed"]
+[connection signal="pressed" from="Node/Button_socializar" to="." method="_on_button_socializar_pressed"]
+[connection signal="pressed" from="Node/Button_aula" to="." method="_on_button_aula_pressed"]
+[connection signal="item_clicked" from="ItemList" to="." method="_on_item_list_item_clicked"]
+[connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
+[connection signal="timeout" from="aviso/Timer_aviso" to="aviso" method="_on_timer_aviso_timeout"]

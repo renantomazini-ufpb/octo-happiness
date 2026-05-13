@@ -64,18 +64,17 @@
 ]
 
 @export var diversao = [
-	{"nome":"Leitura","tempo":30,"estresse":-10,"energia":-5,"icone":preload("res://icon.svg")},
-	{"nome":"Ver filme","preco":5.0,"tempo":90,"estresse":-20,"energia":-10,"icone":preload("res://icon.svg")},
-	{"nome":"Escutar música","tempo":30,"estresse":-15,"icone":preload("res://icon.svg")},
-	{"nome":"Andar de bike","tempo":60,"estresse":-20,"energia":-15,"icone":preload("res://icon.svg")},
-	{"nome":"Desenhar","tempo":60,"estresse":-25,"energia":-10,"icone":preload("res://icon.svg")},
-	{"nome":"Jogar videogame","tempo":90,"estresse":-30,"energia":-15,"icone":preload("res://icon.svg")}
+	{"nome":"Leitura","tempo":30,"estresse":-10,"energia":-5,"icone":preload("res://icons/livro.png")},
+	{"nome":"Ver filme","preco":5.0,"tempo":90,"estresse":-20,"energia":-10,"icone":preload("res://icons/filme.png")},
+	{"nome":"Escutar música","tempo":30,"estresse":-15,"icone":preload("res://icons/musica.png")},
+	#{"nome":"Andar de bike","tempo":60,"estresse":-20,"energia":-15,"icone":preload("res://icon.svg")},
+	{"nome":"Jogar videogame","tempo":90,"estresse":-30,"energia":-15,"icone":preload("res://icons/videogame.png")}
 ]
 
 
 
 @export var aula = [
-	{"nome":"Assistir aula presencial","preco":5.0,"tempo":60,"estresse":15,"energia":-20,"social":10,"bonus":1.0,"icone":preload("res://icon.svg")},
+	{"nome":"Assistir aula presencial","preco":5.0,"tempo":60,"estresse":15,"energia":-20,"social":10,"bonus":1.0,"icone":preload("res://icons/ir_aula.png")},
 	{"nome":"Assistir aula online","preco":2.0,"tempo":60,"estresse":10,"energia":-15,"social":5,"bonus":0.6,"icone":preload("res://icons/computer.png")},
-	{"nome":"Assistir gravado","tempo":60,"estresse":5,"energia":-10,"social":0,"bonus":0.4,"icone":preload("res://icon.svg")}
+	{"nome":"Assistir gravado","tempo":60,"estresse":5,"energia":-10,"social":0,"bonus":0.4,"icone":preload("res://icons/computer3.png")}
 ]
