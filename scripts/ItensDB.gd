@@ -72,15 +72,7 @@
 	{"nome":"Jogar videogame","tempo":90,"estresse":-30,"energia":-15,"icone":preload("res://icon.svg")}
 ]
 
-@export var investir = [
-	{"nome":"Poupança","valor_min":10.0,"retorno":0.02,"risco":0.0,"tempo":0,"icone":preload("res://icon.svg")},
-	{"nome":"Ações seguras","valor_min":20.0,"retorno":0.05,"risco":0.1,"tempo":0,"icone":preload("res://icon.svg")},
-	{"nome":"Ações arriscadas","valor_min":10.0,"retorno":0.15,"risco":0.4,"tempo":0,"icone":preload("res://icon.svg")},
-	{"nome":"Criptoativos","valor_min":30.0,"retorno":0.75,"risco":0.9,"tempo":0,"icone":preload("res://icon.svg")},
-	{"nome":"Investir em amigo","valor_min":40.0,"retorno":1.5,"risco":0.8,"tempo":0,"icone":preload("res://icon.svg")}
-	
-	
-]
+
 
 @export var aula = [
 	{"nome":"Assistir aula presencial","preco":5.0,"tempo":60,"estresse":15,"energia":-20,"social":10,"bonus":1.0,"icone":preload("res://icon.svg")},
