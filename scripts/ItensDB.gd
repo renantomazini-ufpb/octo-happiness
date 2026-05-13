@@ -76,6 +76,6 @@
 
 @export var aula = [
 	{"nome":"Assistir aula presencial","preco":5.0,"tempo":60,"estresse":15,"energia":-20,"social":10,"bonus":1.0,"icone":preload("res://icon.svg")},
-	{"nome":"Assistir aula online","preco":2.0,"tempo":60,"estresse":10,"energia":-15,"social":5,"bonus":0.6,"icone":preload("res://icon.svg")},
+	{"nome":"Assistir aula online","preco":2.0,"tempo":60,"estresse":10,"energia":-15,"social":5,"bonus":0.6,"icone":preload("res://icons/computer.png")},
 	{"nome":"Assistir gravado","tempo":60,"estresse":5,"energia":-10,"social":0,"bonus":0.4,"icone":preload("res://icon.svg")}
 ]

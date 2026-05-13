@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2r47xugm3ss0"
-path="res://.godot/imported/Luna.png-140d152845b29921d8a3098d1ddf6118.ctex"
+uid="uid://ca6324crgo47s"
+path="res://.godot/imported/livro.png-b08eb05b185a298540a82e9be5a3b277.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/actors/Luna.png"
-dest_files=["res://.godot/imported/Luna.png-140d152845b29921d8a3098d1ddf6118.ctex"]
+source_file="res://icons/livro.png"
+dest_files=["res://.godot/imported/livro.png-b08eb05b185a298540a82e9be5a3b277.ctex"]
 
 [params]
 
