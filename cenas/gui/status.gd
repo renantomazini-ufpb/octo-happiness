@@ -18,6 +18,10 @@ var travado = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	var p = Global.personagem
+
+	set_nome(p["nome"])
+	set_curso_nome(p["curso"])
 	$Quarto1.acao_terminou.connect(_fim_animacao)
 	$Money.add_din(50.00)
 	$fome.set_perc(fomev)

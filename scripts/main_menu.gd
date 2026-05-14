@@ -25,3 +25,7 @@ func _on_button_voltar_pressed() -> void:
 func _on_button_sobre_pressed() -> void:
 	$ParedaoSobre.visible = true
 	paredaoVisibilidade = true
+
+
+func _on_button_play_pressed() -> void:
+	get_tree().change_scene_to_file("res://cenas/cena_escolha/escolhedor.tscn")

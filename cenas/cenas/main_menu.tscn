@@ -528,5 +528,6 @@ Música e sons:
 Programação e Game Design: Renan Tomazini"
 autowrap_mode = 2
 
+[connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]
 [connection signal="pressed" from="Button_sobre" to="." method="_on_button_sobre_pressed"]
 [connection signal="pressed" from="ParedaoSobre/Button_voltar" to="." method="_on_button_voltar_pressed"]

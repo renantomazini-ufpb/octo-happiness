@@ -38,7 +38,9 @@ func trocar_personagem(caminho_cena):
 	
 	
 func _ready():
-	trocar_personagem("res://cenas/atores/aline.tscn")
+	var p = Global.personagem
+	var path_actor = "res://cenas/atores/" +p["nome"] + ".tscn"
+	trocar_personagem(path_actor)
 	#colocar para trocar de boneco aqui assim que eu souber como
 	#%Personagem.get_scene_instance_load_placeholder("")
 
