@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d2r47xugm3ss0"
-path="res://.godot/imported/luna.png-1eeeeec34dc5911f4ba2a26ff3cddb0b.ctex"
+uid="uid://c6fotat5c23ha"
+path="res://.godot/imported/Ronaldo.png-4ace8094de730c0974913f6ca9696426.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://sprites/actors/luna.png"
-dest_files=["res://.godot/imported/luna.png-1eeeeec34dc5911f4ba2a26ff3cddb0b.ctex"]
+source_file="res://sprites/actors/Ronaldo.png"
+dest_files=["res://.godot/imported/Ronaldo.png-4ace8094de730c0974913f6ca9696426.ctex"]
 
 [params]
 

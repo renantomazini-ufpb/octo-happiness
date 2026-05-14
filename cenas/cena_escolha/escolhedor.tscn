@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ccb2vuxvk6es4" path="res://cenas/cena_escolha/escolhedor.gd" id="1_hpe5y"]
 [ext_resource type="FontFile" uid="uid://bgdp1fsmfmug7" path="res://addons/W95F.otf" id="2_yv4jq"]
+[ext_resource type="PackedScene" uid="uid://dfyyf6yxgrnfb" path="res://cenas/atores/escolha_actor.tscn" id="3_yv4jq"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bbeud"]
 bg_color = Color(0.45490196, 0.45490196, 0.9098039, 1)
@@ -108,6 +109,12 @@ offset_top = 88.0
 offset_right = 1152.0
 offset_bottom = 120.0
 color = Color(0.08627451, 0.08627451, 0.3019608, 1)
+
+[node name="EscolhaActor" parent="." unique_id=782340283 instance=ExtResource("3_yv4jq")]
+visible = false
+position = Vector2(1017, 316)
+scale = Vector2(8, 8)
+animation = &"aline"
 
 [connection signal="item_selected" from="ItemList" to="." method="_on_item_list_item_selected"]
 [connection signal="pressed" from="Button_play" to="." method="_on_button_play_pressed"]

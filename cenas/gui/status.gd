@@ -304,7 +304,8 @@ func _on_button_dormir_pressed() -> void:
 
 
 func _on_button_trabalhar_pressed() -> void:
-	if menu_aberto == "trabalhar":
+	abrir_menu("trabalhar")
+	'''if menu_aberto == "trabalhar":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
@@ -326,7 +327,7 @@ func _on_button_trabalhar_pressed() -> void:
 			)
 			$ItemList.set_item_metadata(index, item)
 		$ItemList.set_visible(true)
-		menu_aberto = "trabalhar"
+		menu_aberto = "trabalhar"'''
 
 
 func _on_button_socializar_pressed() -> void:

@@ -49,5 +49,12 @@ extends Node
 		"curso":"Computação",
 		"descricao":"Curso de Computação paga ligeramente mais, porém diversão maior. Estudante TEA, sociabilidade cai menos, porém diversão cai mais.",
 		"cena":preload("res://cenas/atores/ronan.tscn")
+	},
+		{
+		"nome":"Ronaldo",
+		"icone":preload("res://icon.svg"),
+		"curso":"Sistemas de Informação",
+		"descricao":"Ganha mais, porém mais estresse e menos energia.",
+		"cena":preload("res://cenas/atores/ronaldo.tscn")
 	}
 ]

@@ -29,7 +29,6 @@ func trocar_personagem(caminho_cena):
 	if personagem_atual != null:
 		pos_antiga = personagem_atual.position
 		personagem_atual.queue_free()
-
 	var nova_cena = load(caminho_cena)
 	personagem_atual = nova_cena.instantiate()
 	personagem_atual.position = pos_antiga
@@ -39,7 +38,7 @@ func trocar_personagem(caminho_cena):
 	
 func _ready():
 	var p = Global.personagem
-	var path_actor = "res://cenas/atores/" +p["nome"] + ".tscn"
+	var path_actor = "res://cenas/atores/" +p["nome"].to_lower() + ".tscn"
 	trocar_personagem(path_actor)
 	#colocar para trocar de boneco aqui assim que eu souber como
 	#%Personagem.get_scene_instance_load_placeholder("")

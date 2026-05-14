@@ -39,9 +39,11 @@ var personagem_selecionado = null
 func _on_item_list_item_selected(index: int) -> void:
 	personagem_selecionado = CharsDB.personagens[index]
 	var p = CharsDB.personagens[index]
+	$EscolhaActor.set_animation(p["nome"].to_lower())
 	$Nome.set_visible(true)
 	$Curso.set_visible(true)
 	$Desc.set_visible(true)
+	$EscolhaActor.set_visible(true)
 	$Nome.text = p["nome"]
 	$Curso.text = p["curso"]
 	$Desc.text = p["descricao"]
