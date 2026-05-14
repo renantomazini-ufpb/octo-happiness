@@ -1,5 +1,5 @@
 @export var comidas = [
-	{"nome":"Ovo frito","icone":preload("res://icon.svg"),"preco":0.5,"fome":4,"energia":4},
+	{"nome":"Ovo frito","icone":preload("res://icon.svg"),"preco":0.45,"fome":4,"energia":4},
 	{"nome":"Pão com manteiga","icone":preload("res://icon.svg"),"preco":0.9,"fome":6,"energia":5},
 	{"nome":"Miojo","icone":preload("res://icon.svg"),"preco":2.5,"fome":30,"energia":-10,"estresse":10},
 	{"nome":"Sanduíche","icone":preload("res://icon.svg"),"preco":3.0,"fome":25,"energia":10},
@@ -9,7 +9,7 @@
 	{"nome":"Almoço simples","icone":preload("res://icon.svg"),"preco":10.0,"fome":30,"energia":20,"estresse":-20},
 	{"nome":"Almoço com proteína","icone":preload("res://icon.svg"),"preco":15.0,"fome":55,"energia":10,"estresse":-20},
 	{"nome":"Parmegiana","icone":preload("res://icon.svg"),"preco":15.0,"fome":40,"energia":20,"estresse":-25},
-	{"nome":"Pizza","icone":preload("res://icon.svg"),"preco":20.0,"fome":75,"energia":10,"estresse":-30},
+	{"nome":"Pizza","icone":preload("res://icon.svg"),"preco":23.0,"fome":75,"energia":10,"estresse":-30},
 	{"nome":"Sushi","icone":preload("res://icon.svg"),"preco":30.0,"fome":75,"energia":20,"estresse":-50}
 ]
 
@@ -19,8 +19,8 @@
 	{"nome":"Café","icone":preload("res://icon.svg"),"preco":3.0,"sede":30,"estresse":-5,"energia":30},
 	{"nome":"Refri simples","icone":preload("res://icon.svg"),"preco":3.0,"sede":20,"estresse":-15,"energia":0},
 	{"nome":"Refri bom","icone":preload("res://icon.svg"),"preco":5.0,"sede":20,"estresse":-30,"energia":10},
-	{"nome":"Monster","icone":preload("res://icon.svg"),"preco":10.0,"sede":10,"estresse":-20,"energia":75},
-	{"nome":"Redbull","icone":preload("res://icon.svg"),"preco":9.0,"sede":10,"estresse":-10,"energia":50},
+	{"nome":"Monster","icone":preload("res://icon.svg"),"preco":14.0,"sede":5,"estresse":-20,"energia":75},
+	{"nome":"Redbull","icone":preload("res://icon.svg"),"preco":9.0,"sede":5,"estresse":-10,"energia":50},
 	{"nome":"Vinho","icone":preload("res://icon.svg"),"preco":15.0,"sede":50,"estresse":-75,"energia":-30}
 ]
 
@@ -43,18 +43,18 @@
 
 @export var trabalhar = [
 	{"nome":"iFood bike","salario":3.0,"tempo":60,"estresse":50,"req_estudo":0.0,"icone":preload("res://icon.svg")},
-	{"nome":"Freelancer","salario":5.0,"tempo":30,"estresse":20,"req_estudo":1.5,"icone":preload("res://icon.svg")},
-	{"nome":"Tradução","salario":5.0,"tempo":20,"estresse":30,"req_estudo":2.5,"icone":preload("res://icon.svg")},
+	{"nome":"Freelancer","salario":5.0,"tempo":30,"estresse":20,"req_estudo":1.8,"icone":preload("res://icon.svg")},
+	{"nome":"Tradução","salario":5.0,"tempo":20,"estresse":30,"req_estudo":3.0,"icone":preload("res://icon.svg")},
 	{"nome":"Bolo de pote","salario":6.0,"tempo":30,"estresse":30,"req_estudo":2.5,"icone":preload("res://icon.svg")},
-	{"nome":"Empreender","salario":5.0,"tempo":30,"estresse":25,"req_estudo":3.5,"icone":preload("res://icon.svg")},
+	{"nome":"Empreender","salario":5.0,"tempo":30,"estresse":35,"req_estudo":3.5,"icone":preload("res://icon.svg")},
 	{"nome":"Projeto pessoal","salario_mult":10,"tempo":60,"estresse":50,"req_estudo":4.0,"icone":preload("res://icon.svg")},
 	{"nome":"Mercado","salario":6.0,"tempo":60,"estresse":70,"req_estudo":2.0,"icone":preload("res://icon.svg")},
-	{"nome":"Estágio","salario":7.5,"tempo":60,"estresse":50,"req_estudo":3.0,"icone":preload("res://icon.svg")},
-	{"nome":"Freelancer exterior","salario":10.0,"tempo":60,"estresse":70,"req_estudo":5.0,"icone":preload("res://icon.svg")},
-	{"nome":"CLT básico","salario":13.0,"tempo":120,"estresse":40,"req_estudo":5.5,"icone":preload("res://icon.svg")},
-	{"nome":"Dar aula","salario":18.0,"tempo":60,"estresse":50,"req_estudo":7.5,"icone":preload("res://icon.svg")},
-	{"nome":"Ajudar colegas","salario":21.0,"tempo":60,"estresse":50,"req_estudo":8.0,"icone":preload("res://icon.svg")},
-	{"nome":"CLT avançado","salario":34.0,"tempo":60,"estresse":30,"req_estudo":10.0,"icone":preload("res://icon.svg")}
+	{"nome":"Estágio","salario":7.5,"tempo":60,"estresse":50,"req_estudo":3.5,"icone":preload("res://icon.svg")},
+	{"nome":"Freelancer exterior","salario":10.0,"tempo":60,"estresse":70,"req_estudo":7.0,"icone":preload("res://icon.svg")},
+	{"nome":"CLT básico","salario":13.0,"tempo":120,"estresse":40,"req_estudo":7.5,"icone":preload("res://icon.svg")},
+	{"nome":"Dar aula","salario":18.0,"tempo":60,"estresse":50,"req_estudo":10.5,"icone":preload("res://icon.svg")},
+	{"nome":"Ajudar colegas","salario":21.0,"tempo":60,"estresse":50,"req_estudo":9.0,"icone":preload("res://icon.svg")},
+	{"nome":"CLT avançado","salario":34.0,"tempo":60,"estresse":30,"req_estudo":15.0,"icone":preload("res://icon.svg")}
 ]
 
 @export var socializar = [
