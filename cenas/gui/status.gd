@@ -200,6 +200,7 @@ func set_curso_nome(curso_nomestr):
 	if curso_nomestr == "Computação":
 		Global.mult_energiav = 0.9
 		Global.mult_calmav = 0.9
+		Global.mult_tempo = 0.8
 	if curso_nomestr ==	"Sistemas de Informação":
 		Global.mult_socialv = 1.2
 		Global.mult_calmav = 0.9

@@ -1722,7 +1722,8 @@ autoplay = "Respirando_frente"
 script = ExtResource("2_jbosp")
 
 [node name="Baloes" type="AnimatedSprite2D" parent="." unique_id=1938847360]
+visible = false
 z_index = 2
 position = Vector2(16, -16)
 sprite_frames = SubResource("SpriteFrames_ooyit")
-animation = &"outro"
+animation = &"dinheiro"
