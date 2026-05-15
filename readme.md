@@ -1,6 +1,6 @@
 ### To do:
-- Tela ganha jogo
-- Tela game over
+- Tela ganha jogo (!)
+- Tela game over (!)
 - Alertas de necessidade
 - sons
 - ícones
