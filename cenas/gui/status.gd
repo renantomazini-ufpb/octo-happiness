@@ -42,75 +42,120 @@ func _ready() -> void:
 func leitura_status(): #rodar a cada interação
 	var texto = ''
 	criticos = 0
-	# sede
+
+	# SEDE
+	if sedev > 30:
+		$sede.set_nome("SEDE")
+
 	if sedev < 30 and sedev > 10:
+		$Quarto1.balao("sede")
 		texto += "Começando a ficar com sede\n"
+		$sede.set_nome("SEDE!")
 	elif sedev <= 10 and sedev > 0:
 		texto += "Sede crítica\n"
+		$sede.set_nome("SEDE!!")
 	elif sedev <= 0:
-		texto += "sedento por água!\n"
+		texto += "Sedento por água!\n"
+		$sede.set_nome("SEDE!!!")
 		criticos += 1
 
 	# FOME
+	if fomev > 30:
+		$fome.set_nome("FOME")
+
 	if fomev < 30 and fomev > 10:
+		$Quarto1.balao("exclamacao")
 		texto += "Começando a ficar com fome\n"
+		$fome.set_nome("FOME!")
 	elif fomev <= 10 and fomev > 0:
 		texto += "Fome crítica\n"
+		$fome.set_nome("FOME!!")
 	elif fomev <= 0:
 		texto += "Você está voraz!\n"
+		$fome.set_nome("FOME!!!")
 		criticos += 1
 
 	# ENERGIA
+	if energiav > 30:
+		$energia.set_nome("ENERGIA")
+		
 	if energiav < 30 and energiav > 10:
 		texto += "Começando a ficar cansado\n"
+		$Quarto1.balao("exclamacao")
+		$energia.set_nome("ENERGIA!")
 	elif energiav <= 10 and energiav > 0:
 		texto += "Energia crítica\n"
+		$energia.set_nome("ENERGIA!!")
 	elif energiav <= 0:
 		texto += "Você não aguenta mais!\n"
+		$energia.set_nome("ENERGIA!!!")
 		criticos += 1
 
-	# Calma
+	# CALMA
+	if calmav > 40:
+		$calma.set_nome("CALMA")
+
 	if calmav > 30 and calmav < 40:
 		texto += "Você está ficando estressado\n"
+		$calma.set_nome("CALMA!")
 	elif calmav >= 1 and calmav < 29:
+		$Quarto1.balao("raiva")
 		texto += "Estresse crítico\n"
+		$calma.set_nome("CALMA!!")
 	elif calmav <= 0:
-		texto += "Você está a beira do burnot!\n"
+		texto += "Você está à beira do burnout!\n"
+		$calma.set_nome("CALMA!!!")
 		criticos += 1
 
 	# SOCIAL
+	if socialv > 30:
+		$social.set_nome("SOCIAL")
+
 	if socialv < 30 and socialv > 10:
 		texto += "Sentindo falta de interação social\n"
+		$Quarto1.balao("outro")
+		$social.set_nome("SOCIAL!")
 	elif socialv <= 10 and socialv > 0:
 		texto += "Social crítico\n"
+		$social.set_nome("SOCIAL!!")
 	elif socialv <= 0:
 		texto += "Você PRECISA ver gente\n"
+		$social.set_nome("SOCIAL!!!")
 		criticos += 1
-	
-	return texto # colocar no final da tela
+
+	return texto
 	
 	
 func add_fome(valor):
+	valor = valor * Global.mult_fomev
 	fomev = fomev + valor
 	$fome.set_perc(fomev)
 	
 func add_calma(valor):
+	valor = valor * Global.mult_calmav
 	if nome == "Ronan" and menu_aberto == "socializar":
 			valor = valor * -1
+	if nome == "Ronan" and menu_aberto == "diversao":
+		valor = valor * 1.3
 	calmav = calmav + valor
 	$calma.set_perc(calmav)
 	
 func add_energia(valor):
+	valor = valor * Global.mult_energiav
 	if nome == "Ronan" and menu_aberto == "trabalhar":
 		valor = valor * 1.3
 	energiav = energiav + valor
 	$energia.set_perc(energiav)
 	
 func add_social(valor):
+	valor = valor * Global.mult_socialv
+	if nome == "Ronan" and menu_aberto == "socializar":
+		valor = valor * 1.5
 	socialv = socialv + valor
 	$social.set_perc(socialv)
 	
 func add_sede(valor):
+	valor = valor * Global.mult_sedev
 	sedev = sedev + valor
 	$sede.set_perc(sedev)
 	
@@ -312,21 +357,28 @@ func _on_item_list_item_selected(index: int) -> void:
 	if menu_aberto == "comidas":
 		await $Quarto1.comer()
 	elif menu_aberto == "bebidas":
+		$Quarto1.balao("sede")
 		await $Quarto1.beber()
 	elif menu_aberto == "estudar":
 		await $Quarto1.estudar()
 	elif menu_aberto == "dormir":
 		await $Quarto1.dormir()
 	elif menu_aberto == "trabalhar":
+		$Quarto1.balao("dinheiro")
 		await $Quarto1.sair_casa()
 	elif menu_aberto == "aula":
-		await $Quarto1.sair_casa()
+		$Quarto1.balao("exclamacao")
+		if item["nome"] == "Assistir aula online" or item["nome"] == "Assistir gravado":
+			await $Quarto1.estudar()
+		else:
+			await $Quarto1.sair_casa()
 	elif menu_aberto == "socializar":
 		await $Quarto1.sair_casa()
 	elif menu_aberto == "diversao":
 		if item["nome"] == "Leitura":
 			await $Quarto1.ler()
 		elif item["nome"] == "Escutar música":
+			$Quarto1.balao("musica")
 			await $Quarto1.celular()
 		else:
 			await $Quarto1.estudar()

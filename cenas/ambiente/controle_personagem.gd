@@ -76,3 +76,20 @@ func usando_pc():
 
 func comer_animation():
 	self.play("Comendo")
+	
+
+func aparecer_balao(emoc,pos):
+	if pos == 1:
+		$Baloes.set_position(Vector2(16,-16))
+	if pos == 2:
+		$Baloes.set_position(Vector2(0,-24))
+	if pos == 3:
+		$Baloes.set_position(Vector2(8,-0))
+	$Baloes.visible = true
+	$Baloes.play(emoc)
+
+	await $Baloes.animation_finished
+
+	$Baloes.visible = false
+
+	

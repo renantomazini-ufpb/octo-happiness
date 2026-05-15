@@ -113,6 +113,7 @@ func estudar():
 	
 func dormir():
 	await ir_para("cama")
+	personagem_atual.aparecer_balao("sono",2)
 	personagem_atual.respirando_esquerda()
 	await get_tree().create_timer(5).timeout
 	await ir_para("neutro")
@@ -140,3 +141,7 @@ func celular():
 	await get_tree().create_timer(3).timeout
 	personagem_atual.respirando_frente()
 	acao_terminou.emit()
+
+
+func balao(emoc):
+	personagem_atual.aparecer_balao(emoc, 1)
