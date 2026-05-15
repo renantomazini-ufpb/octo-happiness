@@ -181,8 +181,8 @@ func set_curso_nome(curso_nomestr):
 		Global.mult_sal = 1.4
 		Global.mult_calmav = 0.9
 	if curso_nomestr == "Engenharia":
-		Global.mult_energiav = 1.5
-		Global.mult_sal = 1.3
+		Global.mult_energiav = 0.8
+		Global.mult_sal = 1.7
 		Global.mult_fomev = 0.9
 		Global.mult_sedev = 0.9
 	if curso_nomestr == "Biologia":

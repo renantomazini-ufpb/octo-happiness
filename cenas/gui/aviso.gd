@@ -12,11 +12,16 @@ func _process(delta: float) -> void:
 
 
 func avisar(texto):
-	self.set_visible(true)
+	self.visible = true
+	self.modulate.a = 1.0
 	self.text = texto
-	$Timer_aviso.start()
 	
-
-
-func _on_timer_aviso_timeout() -> void:
-	self.set_visible(false)
+	await get_tree().create_timer(5.0).timeout
+	
+	# fade out
+	var tween = create_tween()
+	tween.tween_property(self, "modulate:a", 0.0, 1.5)
+	
+	await tween.finished
+	
+	self.visible = false

@@ -304,24 +304,31 @@ fixed_icon_size = Vector2i(64, 64)
 
 [node name="aviso" type="Label" parent="." unique_id=1076319113]
 visible = false
-offset_left = 128.0
-offset_top = 256.0
-offset_right = 960.0
-offset_bottom = 512.0
-theme_override_colors/font_color = Color(0.05882353, 0.05882353, 0.105882354, 1)
-theme_override_colors/font_outline_color = Color(0.98039216, 0.9843137, 0.9647059, 1)
+z_index = 6
+offset_left = 16.0
+offset_top = 192.0
+offset_right = 304.0
+offset_bottom = 568.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 10
-theme_override_constants/outline_size = 8
 theme_override_fonts/font = ExtResource("3_e1ad3")
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 text = "Avisos vão acontecer aqui!"
-horizontal_alignment = 1
+autowrap_mode = 2
 script = ExtResource("6_4c3w5")
 
 [node name="Timer_aviso" type="Timer" parent="aviso" unique_id=367119776]
 wait_time = 5.0
 one_shot = true
 autostart = true
+
+[node name="ColorRect" type="ColorRect" parent="aviso" unique_id=2012356946]
+z_index = -1
+layout_mode = 0
+offset_left = -16.0
+offset_right = 288.0
+offset_bottom = 376.0
+color = Color(0.08627451, 0.08627451, 0.3019608, 1)
 
 [connection signal="acao_terminou" from="Quarto1" to="." method="_on_quarto_1_acao_terminou"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
