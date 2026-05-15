@@ -303,8 +303,32 @@ func _on_button_dormir_pressed() -> void:
 		menu_aberto = "dormir"'''
 
 
-func _on_button_trabalhar_pressed() -> void:
-	abrir_menu("trabalhar")
+func _on_button_trabalhar_pressed() -> void: 
+	#ele não pode usar o mesmo que os outros por causa da classificação e desbloqueio
+	if travado == true: 
+		return
+	if menu_aberto == "trabalhar":
+		$ItemList.clear()
+		$ItemList.set_visible(false)
+		menu_aberto = ""
+	else:
+		$ItemList.clear()
+		for item in itens.trabalhar:
+			var req = item.get("req_estudo", 0.0) #aqui a classificação e desbloqueio
+			if estudo_level < req:
+				continue
+			var texto = item["nome"]
+			if item.has("salario"):
+				texto += "\nGanhos " + str(item["salario"])
+			elif item.has("salario_mult"):
+				texto += "\n$ variável"
+			var index = $ItemList.add_item(
+				texto,
+				item.get("icone", null)
+			)
+			$ItemList.set_item_metadata(index, item)
+		$ItemList.set_visible(true)
+		menu_aberto = "trabalhar"
 	'''if menu_aberto == "trabalhar":
 		$ItemList.clear()
 		$ItemList.set_visible(false)
