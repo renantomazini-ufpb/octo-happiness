@@ -14,12 +14,6 @@ func _process(delta: float) -> void:
 func _on_button_voltar_pressed() -> void:
 	$ParedaoSobre.visible = false
 	paredaoVisibilidade = false
-	'''if paredaoVisibilidade == false:
-		$ParedaoSobre.visible = true
-		paredaoVisibilidade = true
-	else:
-		$ParedaoSobre.visible = false
-		paredaoVisibilidade = false'''
 
 
 func _on_button_sobre_pressed() -> void:

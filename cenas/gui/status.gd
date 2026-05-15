@@ -13,13 +13,14 @@ var curso = 0.0
 var dia = 0
 var minutos = 720
 var travado = false
+var criticos = 0
+
 @onready var itens = ItensDB.new()
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	var p = Global.personagem
-
 	set_nome(p["nome"])
 	set_curso_nome(p["curso"])
 	$Quarto1.acao_terminou.connect(_fim_animacao)
@@ -34,6 +35,58 @@ func _ready() -> void:
 	$social.set_nome("SOCIAL")
 	$sede.set_perc(sedev)
 	$sede.set_nome("SEDE")
+	
+	
+	
+func leitura_status(): #rodar a cada interação
+	var texto = ''
+	criticos = 0
+	# sede
+	if sedev < 30 and sedev > 10:
+		texto += "Começando a ficar com sede\n"
+	elif sedev <= 10 and sedev > 0:
+		texto += "Sede crítica\n"
+	elif sedev <= 0:
+		texto += "sedento por água!\n"
+		criticos += 1
+
+	# FOME
+	if fomev < 30 and fomev > 10:
+		texto += "Começando a ficar com fome\n"
+	elif fomev <= 10 and fomev > 0:
+		texto += "Fome crítica\n"
+	elif fomev <= 0:
+		texto += "Você está voraz!\n"
+		criticos += 1
+
+	# ENERGIA
+	if energiav < 30 and energiav > 10:
+		texto += "Começando a ficar cansado\n"
+	elif energiav <= 10 and energiav > 0:
+		texto += "Energia crítica\n"
+	elif energiav <= 0:
+		texto += "Você não aguenta mais!\n"
+		criticos += 1
+
+	# ESTRESSE
+	if estressev > 70 and estressev < 90:
+		texto += "Você está ficando estressado\n"
+	elif estressev >= 90 and estressev < 100:
+		texto += "Estresse crítico\n"
+	elif estressev >= 100:
+		texto += "Você está a beira do burnot!\n"
+		criticos += 1
+
+	# SOCIAL
+	if socialv < 30 and socialv > 10:
+		texto += "Sentindo falta de interação social\n"
+	elif socialv <= 10 and socialv > 0:
+		texto += "Social crítico\n"
+	elif socialv <= 0:
+		texto += "Você PRECISA ver gente\n"
+		criticos += 1
+	
+	return texto # colocar no final da tela
 	
 	
 func add_fome(valor):
@@ -106,13 +159,13 @@ func controle_horario():
 	
 	while minutos >= 1440:
 		var dinheiro_pais = randf_range(10.00, 50.00)
-		$aviso.avisar("O dia passou, seus pais enviaram \n R$" + str("%0.2f" % dinheiro_pais) )
+		$aviso.avisar("O dia passou, seus pais enviaram \n R$" + str("%0.2f" % dinheiro_pais) +
+		"\n dia: " +str(dia))
 		add_money(dinheiro_pais)
 		minutos -= 1440
 		dia += 1
-		
 		$dia.text = str(dia)
-
+		print(leitura_status()) # botar em um label
 	var hora = int(minutos / 60)
 	var minute = minutos % 60
 
@@ -120,14 +173,12 @@ func controle_horario():
 	$hora_label.text = str(hora) + ":" + str_min
 	
 
-
-func _on_botoes_comer_menu() -> void:
-	print("rodou?")
-	add_fome(100)
-
-
-func _on_button_3_pressed() -> void:
-	$Money.set_din(3100.21)
+	
+func game_over():
+	if criticos >= 3:
+		print("fim de jogo") # colocar mudança de tela e mandar o leitura de status
+	if $Money.passar_dia():
+		print("fim de jogo por dinheiro devido")
 
 
 func carregar_lista(lista):
@@ -238,6 +289,7 @@ func _on_item_list_item_selected(index: int) -> void:
 	#fechadao
 	menu_aberto = ""
 	normaliza()
+	print(leitura_status())
 	
 var menu_aberto = ""
 
@@ -329,7 +381,7 @@ func _on_button_trabalhar_pressed() -> void:
 			$ItemList.set_item_metadata(index, item)
 		$ItemList.set_visible(true)
 		menu_aberto = "trabalhar"
-	'''if menu_aberto == "trabalhar":
+	'''if menu_aberto == "trabalhar": 
 		$ItemList.clear()
 		$ItemList.set_visible(false)
 		menu_aberto = ""
