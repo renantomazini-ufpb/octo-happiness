@@ -15,10 +15,53 @@ func _process(delta: float) -> void:
 func get_din():
 	return "R$" +str(din)
 
-func add_din(val):
-	din = din + val
-	$valor_str.text = "R$" +  str("%0.2f" % din) 
+var tween_din
 
+func add_din_first(val):
+	var valor_inicial = din
+	din += val
+	
+
+	if tween_din:
+		tween_din.kill()
+
+	tween_din = create_tween()
+	tween_din.tween_interval(1.0)
+	tween_din.set_trans(Tween.TRANS_SINE)
+	tween_din.set_ease(Tween.EASE_OUT)
+	
+	tween_din.tween_method(
+		_atualizar_dinheiro,
+		valor_inicial,
+		din,
+		0.5
+	)
+
+
+func add_din(val):
+	var valor_inicial = din
+	din += val
+	
+
+	if tween_din:
+		tween_din.kill()
+
+	tween_din = create_tween()
+	tween_din.tween_interval(3.0)
+	tween_din.set_trans(Tween.TRANS_SINE)
+	tween_din.set_ease(Tween.EASE_OUT)
+	
+	tween_din.tween_method(
+		_atualizar_dinheiro,
+		valor_inicial,
+		din,
+		0.5
+	)
+
+func _atualizar_dinheiro(valor):
+	$valor_str.text = "R$" + str("%0.2f" % valor)
+	
+	
 func sub_din(val):
 	din = din - val
 	$valor_str.text = "R$" +str(din)

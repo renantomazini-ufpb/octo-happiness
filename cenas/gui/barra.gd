@@ -16,9 +16,19 @@ func set_nome(name):
 	
 func get_nome():
 	return $ProgressBar/Label.text
+	
+func set_perc_first_time(perc):
+	var tween = create_tween()
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property($ProgressBar, "value", perc, 2.5)
 
 func set_perc(perc):
-	$ProgressBar.value = perc
+	var tween = create_tween()
+	tween.tween_interval(3.0)
+	tween.set_trans(Tween.TRANS_SINE)
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property($ProgressBar, "value", perc, 3.0)
 	
 func get_perc():
 	return $ProgressBar.value
