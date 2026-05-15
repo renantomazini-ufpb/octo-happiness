@@ -27,8 +27,6 @@ func _selecionado(index):
 
 	var p = CharsDB.personagens[index]
 
-	#print(p["nome"])
-	#print(p["curso"])
 	pass
 
 
