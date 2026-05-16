@@ -28,11 +28,11 @@
 
 @export var estudar = [
 	{"nome":"Teste","estudo":1,"calma":-10,"energia":-25,"tempo":360,"icone":preload("res://icon.svg")},
-	{"nome":"Ler PDFs","estudo":0.1,"calma":-10,"energia":-25,"tempo":30,"icone":preload("res://icon.svg")},
-	{"nome":"Ver vídeos","estudo":0.1,"calma":-15,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
-	{"nome":"Criar resumos","estudo":0.2,"calma":-25,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
-	{"nome":"Criar apresentação","estudo":0.2,"calma":-35,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
-	{"nome":"Ler livro","preco":30.0,"estudo":0.85,"calma":-10,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
+	{"nome":"Ler PDFs","estudo":0.1,"calma":-15,"energia":-25,"tempo":30,"icone":preload("res://icon.svg")},
+	{"nome":"Ver vídeos","estudo":0.1,"calma":-20,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
+	{"nome":"Criar resumos","estudo":0.2,"calma":-27,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
+	{"nome":"Criar apresentação","estudo":0.2,"calma":-33,"energia":-20,"tempo":30,"icone":preload("res://icon.svg")},
+	{"nome":"Ler livro","preco":30.0,"estudo":0.85,"calma":-15,"energia":-20,"tempo":120,"icone":preload("res://icon.svg")},
 	{"nome":"Ler artigos","estudo":0.2,"calma":-35,"energia":-15,"tempo":20,"icone":preload("res://icon.svg")}
 ]
 
@@ -46,7 +46,7 @@
 ]
 
 @export var trabalhar = [
-	{"nome":"App de entrega","fome": -10,"sede": -25,"salario":3.0,"tempo":60,"calma":-30,"req_estudo":0.0,"energia": -50,"icone":preload("res://icon.svg")},
+	{"nome":"App de entrega","fome": -10,"sede": -25,"salario":3.0,"tempo":60,"calma":-35,"req_estudo":0.0,"energia": -50,"icone":preload("res://icon.svg")},
 	{"nome":"Freelancer","fome": -10,"sede": -25,"salario":5.0,"tempo":30,"calma":-20,"req_estudo":1.8,"energia": -30,"icone":preload("res://icon.svg")},
 	{"nome":"Tradução","fome": -10,"sede": -25,"salario":5.0,"tempo":20,"calma":-30,"req_estudo":3.0,"energia": -30,"icone":preload("res://icon.svg")},
 	{"nome":"Bolo de pote","fome": -10,"sede": -25,"salario":6.0,"tempo":30,"calma":-30,"req_estudo":2.5,"energia": -30,"icone":preload("res://icon.svg")},
@@ -68,7 +68,7 @@
 ]
 
 @export var diversao = [
-	{"nome":"Leitura","tempo":30,"calma":20,"energia":-15,"icone":preload("res://icons/livro.png")},
+	{"nome":"Leitura","tempo":30,"calma":25,"energia":-20,"icone":preload("res://icons/livro.png")},
 	{"nome":"Ver filme","preco":5.0,"tempo":90,"calma":25,"energia":-10,"icone":preload("res://icons/filme.png")},
 	{"nome":"Escutar música","tempo":30,"calma":25,"icone":preload("res://icons/musica.png")},
 	#{"nome":"Andar de bike","tempo":60,"calma":-20,"energia":-15,"icone":preload("res://icon.svg")},
